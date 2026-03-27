@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branch Terminated / Resign List</title>
+    <title>Make Attendance</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,39 @@
       }
       .nav-item > a.active {
         font-weight: 600;
+      }
+
+      #attedanceTable .sticky-col {
+        position: sticky;
+        left: 0;
+        background: white;
+        z-index: 2;
+      }
+
+      #attedanceTable .cell-text {
+        font-weight:bold;
+      }
+
+      .table > tbody > tr > .present {
+        background: #d4edda;
+      }
+      .table > tbody > tr > .half_day_present {
+        background: #9be9ad;
+      }
+      .table > tbody > tr > .absent {
+        background: #f7c9cd;
+      }
+      .table > tbody > tr > .holiday {
+        background: #fff3cd;
+      }
+      .table > tbody > tr > .leave {
+        background: #c2cdf7;
+      }
+      .table > tbody > tr > .sunday {
+        background: #bbbbbb;
+      }
+      .table > tbody > tr > .not_applicable {
+        background: #eeeeee;
       }
     </style>
 </head>
@@ -393,59 +426,196 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Branch Termination / Resign List</h4>
-              <ul class="breadcrumbs mb-3">
-                <li class="nav-home">
-                  <a href="index.html">
-                    <i class="ri-home-3-line"></i>
-                  </a>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Employee Management</span>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Branch Termination / Resign List</span>
-                </li>
-              </ul>
+              <h4 class="fw-bold mb-3">Make Attendace</h4>
+            </div>
+            <div class="mb-3">
+              <small>
+                <strong class="text-danger my-2">Note: Employees who have been dismissed from their jobs are highlighted with a red background.</strong>
+              </small>
             </div>
              <div class="row">
               <div class="col-md-12">
-                <div class="card">
+                <div class="card card-stats card-round">
+                  <div class="card-header d-print-none">
+                      <form action="">
+                        <div class="col-md-12">
+                          <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                              <div class="form-group">
+                                <label for="month">Select Month</label>
+                                <input type="month" name="month" class="form-control mb-2" id="rangePicker">                  
+                              </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 align-content-center">
+                              <div class="form-group mt-2">
+                                <button type="submit" name="show" class="btn btn-info btn-sm">Show</button>   
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <div class="table-responsive">
+                        <table class="display table table-borderless">
+                          <tbody>
+                            <tr class="text-center">
+                              <td style="border-bottom: 0px;">
+                                Present(P)
+                                <br>
+                                <div style="width:20px; height:20px; background:#d4edda; border-radius:10px; margin:auto"></div>
+                              </td>
+                              <td style="border-bottom: 0px;">
+                                Half Day Present(HDP)
+                                <br>
+                                <div style="width:20px; height:20px; background:#9be9ad; border-radius:10px; margin:auto"></div>
+                              </td>
+                              <td style="border-bottom: 0px;">
+                                Absent(A)
+                                <br>
+                                <div style="width:20px; height:20px; background:#f7c9cd; border-radius:10px; margin:auto"></div>
+                              </td>
+                              <td style="border-bottom: 0px;">
+                                Holiday(H)
+                                <br>
+                                <div style="width:20px; height:20px; background:#fff3cd; border-radius:10px; margin:auto"></div>
+                              </td>
+                              <td style="border-bottom: 0px;">
+                                Sunday(OFF)
+                                <br>
+                                <div style="width:20px; height:20px; background:#bbbbbb; border-radius:10px; margin:auto"></div>
+                              </td>
+                              <td style="border-bottom: 0px;">
+                                Leave(L)
+                                <br>
+                                <div style="width:20px; height:20px; background:#c2cdf7; border-radius:10px; margin:auto"></div>
+                              </td>
+                              <td style="border-bottom: 0px;">
+                                Not Applicable(NA)
+                                <br>
+                                <div style="width:20px; height:20px; background:#eeeeee; border-radius:10px; margin:auto"></div>
+                              </td>
+                              
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                  </div>
                   <div class="card-body">
-                    <div class="table-responsive" id="printableArea">
+                    <div class="table-responsive #attedanceTable">
                           <div class="d-print-none">
                             <p class="text-start">
-                                <button type="submit" class="btn btn-primary btn-sm" name="submit" id="exportExcel" onclick="exportExcel()"><strong><i class="ri-download-2-line"></i> Export</strong></button>
+                              <a href="make-attendance-view.html"><button type="submit" class="btn btn-secondary btn-sm mb-1" name="submit" id="viewAttendance"><strong><i class="ri-calendar-2-line"></i> View</strong></button></a>
                             </p>
                           </div>
-                      <table id="basic-datatables" class="display table table-hover table-bordered">
+                      <table class="display table table-bordered">
                         <thead>
                           <tr>
-                            <th colspan="6" class="text-center bg-light"><strong>Branch Terminated / Resign List</strong></th>
+                            <th colspan="40" class="text-start" style="background: #a9dcab;"><strong>Rajsthan ULB [ NAGAR NIGAM JAIPUR ] employee attendance for <span>February 2026</span></strong></th>
                           </tr>
                           <tr class="text-center">
                             <th>#</th>
-                            <th>Employee Code</th>
-                            <th>Employee Name</th>
-                            <th>Designation</th>
-                            <th>Date of Joining</th>
-                            <th>Termination Date</th>
+                            <th class="sticky-col">Code</th>
+                            <th class="">Name</th>
+                            <th>1<br>Mon</th>
+                            <th>2<br>Tue</th>
+                            <th>3<br>Wed</th>
+                            <th>4<br>Thu</th>
+                            <th>5<br>Fri</th>
+                            <th>6<br>Sat</th>
+                            <th class="sunday">7<br>Sun</th>
+
+                            <th>Present</th>
+                            <th>Absent</th>
+                            <th>E|T Holiday</th>
+                            <th>E|T Sunday</th>
+                            <th>Saturday</th>
+                            <th>Leave</th>
+                            <th>Total Absent</th>
+                            <th>Pay Days</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                          <tr class="text-center">
+                            <td class="">1</td>
+                            <td class="sticky-col">SSPL-12345</td>
+                            <td class="name">VIMAL KUMAR SHARMA</td>
+                            <td class="not_applicable">
+                              <select name="day1">
+                                <option selected>NA</option>
+                                <option>P</option>
+                                <option>HDP</option>
+                                <option>A</option>
+                                <option>H</option>
+                                <option>L</option>
+                              </select>
+                            </td>
+                            <td class="present">
+                              <select name="day2">
+                                <option selected>P</option>
+                                <option>HDP</option>
+                                <option>A</option>
+                                <option>H</option>
+                                <option>L</option>
+                                <option>NA</option>
+                              </select>
+                            </td>
+
+                            <td class="holiday">
+                              <select name="day3">
+                                <option selected>H</option>
+                                <option>P</option>
+                                <option>HDP</option>
+                                <option>A</option>
+                                <option>L</option>
+                                <option>NA</option>
+                              </select>
+                            </td>
+                            <td class="absent">
+                              <select name="day4">
+                                <option>P</option>
+                                <option>HDP</option>
+                                <option selected>A</option>
+                                <option>H</option>
+                                <option>L</option>
+                                <option>NA</option>
+                              </select>
+                            </td>
+
+                            <td class="leave">
+                              <select name="day5">
+                                <option>P</option>
+                                <option>HDP</option>
+                                <option>A</option>
+                                <option>H</option>
+                                <option selected>L</option>
+                                <option>NA</option>
+                              </select>
+                            </td>
+                            <td class="half_day_present">
+                              <select name="day6">
+                                <option>P</option>
+                                <option selected>HDP</option>
+                                <option>A</option>
+                                <option>H</option>
+                                <option>L</option>
+                                <option>NA</option>
+                              </select>
+                            </td>
+
+                            <!-- Sunday (disabled) -->
+                            <td class="sunday off">
+                              <select disabled>
+                                <option selected>OFF</option>
+                              </select>
+                            </td>
+
+                            <td>2</td>
                             <td>1</td>
-                            <td class="text-center">SSPL-12345</td>
-                            <td class="text-center">CHANDRA MOHAN SHARMA</td>
-                            <td class="text-center">TAX COLLECTOR</td>
-                            <td class="text-center">Sept 1, 2020</td>
-                            <td class="text-center">31-12-2021</td>
+                            <td>1 | 1</td>
+                            <td>1 | 1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>4</td>
                           </tr>
                         </tbody>
                       </table>
@@ -534,6 +704,12 @@
           $("#addRowModal").modal("hide");
         });
       });
+
+      const currentYear = new Date().getFullYear();
+      const lastYear = currentYear - 1;
+      const monthInput = document.getElementById('rangePicker');
+      monthInput.min = `${lastYear}-01`;    
+      monthInput.max = `${currentYear}-12`;
 </script>
 </body>
 </html>

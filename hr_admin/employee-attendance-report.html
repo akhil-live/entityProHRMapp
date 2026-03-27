@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branch Terminated / Resign List</title>
+    <title>Attendance Report</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -393,7 +393,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Branch Termination / Resign List</h4>
+              <h4 class="fw-bold mb-3">Attendance Report</h4>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="index.html">
@@ -404,13 +404,13 @@
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Employee Management</span>
+                  <span class="op-7">Attendance</span>
                 </li>
                 <li class="separator">
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Branch Termination / Resign List</span>
+                  <span class="op-7">Attendance Report</span>
                 </li>
               </ul>
             </div>
@@ -419,33 +419,47 @@
                 <div class="card">
                   <div class="card-body">
                     <div class="table-responsive" id="printableArea">
-                          <div class="d-print-none">
-                            <p class="text-start">
-                                <button type="submit" class="btn btn-primary btn-sm" name="submit" id="exportExcel" onclick="exportExcel()"><strong><i class="ri-download-2-line"></i> Export</strong></button>
-                            </p>
-                          </div>
                       <table id="basic-datatables" class="display table table-hover table-bordered">
                         <thead>
                           <tr>
-                            <th colspan="6" class="text-center bg-light"><strong>Branch Terminated / Resign List</strong></th>
+                            <th colspan="7" class="text-center bg-light"><strong>Attendance Report</strong></th>
                           </tr>
                           <tr class="text-center">
                             <th>#</th>
-                            <th>Employee Code</th>
-                            <th>Employee Name</th>
-                            <th>Designation</th>
-                            <th>Date of Joining</th>
-                            <th>Termination Date</th>
+                            <th>Year</th>
+                            <th>Month</th>
+                            <th>Status</th>
+                            <th>Submitted Date</th>
+                            <th>Remark</th>
+                            <th>Actions</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td>1</td>
-                            <td class="text-center">SSPL-12345</td>
-                            <td class="text-center">CHANDRA MOHAN SHARMA</td>
-                            <td class="text-center">TAX COLLECTOR</td>
-                            <td class="text-center">Sept 1, 2020</td>
-                            <td class="text-center">31-12-2021</td>
+                            <td class="text-center">1</td>
+                            <td class="text-center">2026</td>
+                            <td class="text-center">February</td>
+                            <td class="text-center"><span class="badge badge-primary">Under Review</span></td>
+                            <td class="text-center">02 March 2026</td>
+                            <td class="text-center">Fix missing entries</td>
+                            <td class="text-center">
+                              <a href="attendance-approval-request.html"><button class="btn btn-success btn-xs mb-1">Edit</button></a>
+                            </td>
+                            
+                          </tr>
+                          <tr>
+                            <td class="text-center">2</td>
+                            <td class="text-center">2026</td>
+                            <td class="text-center">January</td>
+                            <td class="text-center"><span class="badge badge-success">Approved</span></td>
+                            <td class="text-center">02 February 2026</td>
+                            <td class="text-center">
+
+                            </td>
+                            <td class="text-center">
+
+                            </td>
+                            
                           </tr>
                         </tbody>
                       </table>

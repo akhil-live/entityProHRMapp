@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branch Terminated / Resign List</title>
+    <title>Attendance Approval Request</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -393,63 +393,31 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Branch Termination / Resign List</h4>
-              <ul class="breadcrumbs mb-3">
-                <li class="nav-home">
-                  <a href="index.html">
-                    <i class="ri-home-3-line"></i>
-                  </a>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Employee Management</span>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Branch Termination / Resign List</span>
-                </li>
-              </ul>
+              <h4 class="fw-bold mb-3">Attendance Approval Request</h4>
             </div>
              <div class="row">
               <div class="col-md-12">
                 <div class="card">
                   <div class="card-body">
-                    <div class="table-responsive" id="printableArea">
-                          <div class="d-print-none">
-                            <p class="text-start">
-                                <button type="submit" class="btn btn-primary btn-sm" name="submit" id="exportExcel" onclick="exportExcel()"><strong><i class="ri-download-2-line"></i> Export</strong></button>
-                            </p>
-                          </div>
-                      <table id="basic-datatables" class="display table table-hover table-bordered">
-                        <thead>
-                          <tr>
-                            <th colspan="6" class="text-center bg-light"><strong>Branch Terminated / Resign List</strong></th>
-                          </tr>
-                          <tr class="text-center">
-                            <th>#</th>
-                            <th>Employee Code</th>
-                            <th>Employee Name</th>
-                            <th>Designation</th>
-                            <th>Date of Joining</th>
-                            <th>Termination Date</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td class="text-center">SSPL-12345</td>
-                            <td class="text-center">CHANDRA MOHAN SHARMA</td>
-                            <td class="text-center">TAX COLLECTOR</td>
-                            <td class="text-center">Sept 1, 2020</td>
-                            <td class="text-center">31-12-2021</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="month">Select Month</label>
+                          <input type="month" name="month" class="form-control mb-2" id="rangePicker">                  
+                        </div>             
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="upload">Upload Attendance Excel Sheet</label>
+                          <input type="file" class="form-control" id="upload" name="upload" value="" required="">
+                        </div>                 
+                      </div>
                     </div>
+                    <div class="d-print-none">
+                      <p class="text-start p-3">
+                        <button type="submit" class="btn btn-success btn-sm" name="submit"><strong>Submit</strong></button>
+                      </p>
+                  </div>
                   </div>
 
                 </div>
@@ -534,6 +502,12 @@
           $("#addRowModal").modal("hide");
         });
       });
+
+    const currentYear = new Date().getFullYear();
+    const lastYear = currentYear - 1;
+    const monthInput = document.getElementById('rangePicker');
+    monthInput.min = `${lastYear}-01`;    
+    monthInput.max = `${currentYear}-12`;
 </script>
 </body>
 </html>

@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branch Terminated / Resign List</title>
+    <title>Employee Leave Apply</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/admin.css">
     <link rel="stylesheet" href="static/css/responsive.css">
 
@@ -21,6 +22,56 @@
       }
       .nav-item > a.active {
         font-weight: 600;
+      }
+
+
+      /* Calendar header */
+      .fc-toolbar-title{
+      font-weight:600;
+      font-size:20px;
+      }
+
+      /* Event style */
+      .fc-event{
+      cursor:pointer;
+      border:none;
+      padding:4px 6px;
+      font-size:12px;
+      border-radius:6px;
+      transition:0.2s;
+      }
+
+      .fc-event:hover{
+      transform:scale(1.05);
+      opacity:.9;
+      }
+
+      /* Sunday Highlight */
+      .fc-day-sun{
+      background:#e0e0e0 !important;
+      }
+
+      .fc-col-header-cell.fc-day-sun{
+      background:#bdbdbd !important;
+      color:white;
+      font-weight:bold;
+      }
+
+      /* Today highlight */
+      .fc-day-today{
+      background:#e8f4ff !important;
+      border:2px solid #0d6efd;
+      }
+
+      @media(max-width:768px){
+        .fc-toolbar{
+        flex-direction:column;
+        gap:8px;
+        }
+
+        .fc-toolbar-title{
+        font-size:16px;
+        }
       }
     </style>
 </head>
@@ -108,7 +159,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="employee-leave-pending.html">
+                      <a href="employee-leave-approved.html">
                         <span class="sub-item">Leave Review</span>
                       </a>
                     </li>
@@ -393,7 +444,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Branch Termination / Resign List</h4>
+              <h4 class="fw-bold mb-3">Apply Leave</h4>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="index.html">
@@ -404,58 +455,156 @@
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Employee Management</span>
+                  <span class="op-7">Leave</span>
                 </li>
                 <li class="separator">
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Branch Termination / Resign List</span>
+                  <span class="op-7">Apply Leave</span>
                 </li>
               </ul>
             </div>
-             <div class="row">
-              <div class="col-md-12">
-                <div class="card">
+            <div>
+              <small>
+                <strong class="text-danger">* On leave doesn't switch off your phone.</strong>
+                <ol>
+                  <li class="text-danger">
+                    Employees are eligible to take <strong>Sick Leave (SL)</strong> with a valid <strong>Medical Certificate/Receipt.</strong>
+                  </li>
+                  <li class="text-danger">
+                    Once the <strong>Sick Leave (SL)</strong> limit is exhausted, any additional leave requested will be considered as <strong>unpaid leave.</strong>
+                  </li>
+                </ol>
+              </small>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                
+                <div class="card card-stats card-round">
+                  <div class="card-header d-print-none">
+                      <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="empName">Select Employee</label>
+                          <select class="form-select" id="empName" name="empName" required>
+                            <option value="">Select</option>
+                            <option value="">SELF</option>
+                            <option value="">VIMAL KUMAR SHARMA (SSPL-00221)</option>
+                            <option value="">NIRANJAN KUMAR (SSPL-00222)</option>
+                            <option value="">RITESH KUMAR (SSPL-00001)</option>
+                          </select>                       
+                        </div>
+                      </div>
+                    
+                  </div>
+                  
                   <div class="card-body">
-                    <div class="table-responsive" id="printableArea">
-                          <div class="d-print-none">
-                            <p class="text-start">
-                                <button type="submit" class="btn btn-primary btn-sm" name="submit" id="exportExcel" onclick="exportExcel()"><strong><i class="ri-download-2-line"></i> Export</strong></button>
-                            </p>
-                          </div>
-                      <table id="basic-datatables" class="display table table-hover table-bordered">
+                    <div id="calendar"></div>
+                    <br>
+                    <div class="table-responsive">
+                      <table class="display table table-hover table-bordered table-head-bg-secondary">
                         <thead>
                           <tr>
-                            <th colspan="6" class="text-center bg-light"><strong>Branch Terminated / Resign List</strong></th>
+                            <th colspan="4" class="text-center bg-light"><strong>Leave Summary</strong></th>
                           </tr>
                           <tr class="text-center">
-                            <th>#</th>
-                            <th>Employee Code</th>
-                            <th>Employee Name</th>
-                            <th>Designation</th>
-                            <th>Date of Joining</th>
-                            <th>Termination Date</th>
+                            <th>LEAVE TYPE</th>
+                            <th>TOTAL LEAVE</th>
+                            <th>TAKEN LEAVE</th>
+                            <th>LEFT LEAVE</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td class="text-center">SSPL-12345</td>
-                            <td class="text-center">CHANDRA MOHAN SHARMA</td>
-                            <td class="text-center">TAX COLLECTOR</td>
-                            <td class="text-center">Sept 1, 2020</td>
-                            <td class="text-center">31-12-2021</td>
+                          <tr class="text-center">
+                            <td class="fw-bold">CASUAL LEAVE</td>
+                            <td>12</td>
+                            <td>0</td>
+                            <td>12</td>
+                          </tr>
+                          <tr class="text-center">
+                            <td class="fw-bold">UNPAID LEAVE</td>
+                            <td>15</td>
+                            <td>0</td>
+                            <td>15</td>
+                          </tr>
+                          <tr class="text-center">
+                            <td class="fw-bold">SICK LEAVE</td>
+                            <td>15</td>
+                            <td>0</td>
+                            <td>15</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
                   </div>
-
+                  
                 </div>
               </div>
+              
             </div>
             
+          </div>
+        </div>
+
+        
+        <div class="modal fade" id="eventModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-secondary">
+                <h6 class="modal-title">Leave Apply by <span>VIMAL KUMAR SHARMA (SSPL-12345)</span></h6>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form id="leaveForm">
+                  <input type="hidden" id="leaveId">
+                  <div class="mb-2">
+                    <label>Leave Session</label><br>
+                    <div class="selectgroup selectgroup-secondary selectgroup-pills">
+                      <label class="selectgroup-item">
+                        <input type="radio" name="leaveSession" value="Full Day" class="selectgroup-input" id="full" checked="" required>
+                        <span class="selectgroup-button mb-1">Full Day</span>
+                      </label>
+                      <label class="selectgroup-item">
+                        <input type="radio" name="leaveSession" value="Morning Half Day" class="selectgroup-input" id="morning" required>
+                        <span class="selectgroup-button mb-1">Morning Half Day</span>
+                      </label>
+                      <label class="selectgroup-item">
+                        <input type="radio" name="leaveSession" value="Afternoon Half Day" class="selectgroup-input" id="afternoon" required>
+                        <span class="selectgroup-button mb-1">Afternoon Half Day</span>
+                      </label>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-2">
+                    <label for="leaveType">Leave Type</label>
+                    <select id="leaveType" class="form-control" required>
+                      <option value="">Select Leave Type</option>
+                      <option value="Casual Leave">Casual Leave</option>
+                      <option value="Sick Leave">Sick Leave</option>
+                      <option value="Paid Leave">Paid Leave</option>
+                      <option value="Unpaid Leave">Unpaid Leave</option>
+                    </select>
+                  </div>
+                  <div class="mb-2">
+                    <label for="leaveStart">Leave From</label>
+                    <input type="date" id="leaveStart" class="form-control" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="leaveEnd">Leave Upto</label>
+                    <input type="date" id="leaveEnd" class="form-control" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="leaveFile">Upload Medical File</label>
+                    <input type="file" id="leaveFile" class="form-control">
+                  </div>
+                  <div class="mb-2">
+                    <label for="leaveReason">Leave Reason</label>
+                    <textarea id="leaveReason" class="form-control" placeholder="Enter leave reason" required></textarea>
+                  </div>
+                  <button class="btn btn-primary btn-sm">Submit</button>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -471,69 +620,73 @@
       </div>
     </div>
 
-    
+<script>
+let calendar;
+const leaveColors = {
+    "Sick Leave":"#E6B989",
+    "Casual Leave":"#1CB0E6",
+    "Paid Leave":"#E58BCF",
+    "Unpaid Leave":"#10E6B7"
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    const calendarEl = document.getElementById('calendar');
+    const modalEl = document.getElementById('eventModal');
+    const modal = new bootstrap.Modal(modalEl);
+
+    calendar = new FullCalendar.Calendar(calendarEl,{
+        initialView:'dayGridMonth',
+        editable:true,
+        selectable:true,
+        height:"auto",
+        headerToolbar:{
+            left:'prev,next today',
+            center:'title',
+            right:'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        dateClick:function(info){
+            openLeaveModal(info.dateStr, info.dateStr);
+        },
+        eventClick:function(info){
+            editLeave(info.event);
+        },
+        eventDrop:function(info){
+            updateLeave(info.event);
+        },
+        dayCellDidMount:function(info){
+            if(info.date.getDay() === 0){
+                info.el.style.backgroundColor="#fff2f2";
+            }
+        },
+        eventDidMount:function(info){
+            let e = info.event.extendedProps;
+            info.el.title =
+                info.event.title+"\n"+
+                "LeaveSession: "+(e.leaveSession||"")+"\n"+
+                "Start: "+info.event.startStr+"\n"+
+                "End: "+(info.event.endStr||info.event.startStr)+"\n"+
+                "Reason: "+(e.reason||"")+"\n"+
+                "File: "+(e.file||"");
+        }
+    });
+
+    calendar.render();
+
+    // Open modal for new leave
+    function openLeaveModal(start, end){
+        document.getElementById("leaveForm").reset();
+        document.getElementById("leaveId").value = "";
+        document.getElementById("leaveStart").value = start;
+        document.getElementById("leaveEnd").value = end;
+        modal.show();
+    }
+});
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js" integrity="sha512-5AcaBUUUU/lxSEeEcruOIghqABnXF8TWqdIDXBZ2SNEtrTGvD408W/ShtKZf0JNjQUfOiRBJP+yHk6Ab2eFw3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="static/js/datatables/datatables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
 <script src="static/js/admin.js"></script>
-<script>
-  $(document).ready(function () {
-        $("#basic-datatables").DataTable({});
-
-        $("#multi-filter-select").DataTable({
-          pageLength: 10,
-          initComplete: function () {
-            this.api()
-              .columns()
-              .every(function () {
-                var column = this;
-                var select = $(
-                  '<select class="form-select"><option value=""></option></select>'
-                )
-                  .appendTo($(column.footer()).empty())
-                  .on("change", function () {
-                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-                    column
-                      .search(val ? "^" + val + "$" : "", true, false)
-                      .draw();
-                  });
-
-                column
-                  .data()
-                  .unique()
-                  .sort()
-                  .each(function (d, j) {
-                    select.append(
-                      '<option value="' + d + '">' + d + "</option>"
-                    );
-                  });
-              });
-          },
-        });
-
-        // Add Row
-        $("#add-row").DataTable({
-          pageLength: 10,
-        });
-
-        var action =
-          '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-        $("#addRowButton").click(function () {
-          $("#add-row")
-            .dataTable()
-            .fnAddData([
-              $("#addName").val(),
-              $("#addPosition").val(),
-              $("#addOffice").val(),
-              action,
-            ]);
-          $("#addRowModal").modal("hide");
-        });
-      });
-</script>
 </body>
 </html>
