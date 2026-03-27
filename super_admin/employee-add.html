@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Employee</title>
+    <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/admin.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+
+    <style>
+      body { font-family: 'Noto sans', sans-serif; }
+      .nav-item.show > a {
+        background-color: #6861CE;
+        color: #fff;
+      }
+      .nav-item > a.active {
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="white">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="inky">
+            <a href="index.html" class="logo">
+              <img src="../assets/images/logo/sspl_logo.png" alt="navbar brand" class="navbar-brand" height="44"/>
+              <h4 style="color: white; padding: 6px 0 0 6px;"><strong>Sparrow Softech</strong></h4>
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item">
+                <a href="index.html">
+                  <i class="ri-home-3-line"></i>
+                  <p>Home</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#system">
+                  <i class="ri-computer-line"></i>
+                  <p>System Setup</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="system">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="system-branch-list.html">
+                        <span class="sub-item">Branch List</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="system-department-list.html">
+                        <span class="sub-item">Department List</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="system-project-list.html">
+                        <span class="sub-item">Project List</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#userConfig">
+                  <i class="ri-admin-line"></i>
+                  <p>User Configuration</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="userConfig">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="config-users-list.html">
+                        <span class="sub-item">Users List</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="reset-password.html">
+                        <span class="sub-item">Reset Password</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#employee">
+                  <i class="ri-user-line"></i>
+                  <p>Employee Management</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="employee">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="employee-add.html">
+                        <span class="sub-item">Add New Employee</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-profile.html">
+                        <span class="sub-item">Employee Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-list.html">
+                        <span class="sub-item">Employee List</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-id-card.html">
+                        <span class="sub-item">ID Card</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-resign-list.html">
+                        <span class="sub-item">Branch Termination / Resign List</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#leaveMaster">
+                  <i class="ri-calendar-close-line"></i>
+                  <p>Leave</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="leaveMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="employee-apply-leave.html">
+                        <span class="sub-item">Apply Leave</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-leave-pending.html">
+                        <span class="sub-item">Leave Review</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#attendanceMaster">
+                  <i class="ri-calendar-2-line"></i>
+                  <p>Attendance</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="attendanceMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="make-attendance-view.html">
+                        <span class="sub-item">Make Attendance</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="attendance-report.html">
+                        <span class="sub-item">Attendance Report</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#salaryMaster">
+                  <i class="ri-money-rupee-circle-line"></i>
+                  <p>Salary</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="salaryMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="employee-payslip.html">
+                        <span class="sub-item">Employee Payslip</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#holidayMaster">
+                  <i class="ri-calendar-view"></i>
+                  <p>Holiday</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="holidayMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="holiday-list.html">
+                        <span class="sub-item">Holiday List</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="inky">
+              <a href="index.html" class="logo">
+                <img src="../assets/images/logo/sspl_logo.png" alt="navbar brand" class="navbar-brand" height="20"/>
+                <h6 style="color: white; padding: 6px 0 0 8px;"><strong>Sparrow Softech</strong></h6>
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+              <nav
+                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-xl-flex"
+              >
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="btn btn-search pe-1">
+                      <i class="ri-search-line"></i>
+                    </button>
+                  </div>
+                  <input type="text" placeholder="Search ..." class="form-control" />
+                </div>
+              </nav>
+
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none" >
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-haspopup="true" >
+                    <i class="ri-search-line"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-search animated fadeIn">
+                    <form class="navbar-left navbar-form nav-search">
+                      <div class="input-group">
+                        <input type="text" placeholder="Search ..." class="form-control" />
+                      </div>
+                    </form>
+                  </ul>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <small class="profile-username">
+                      <span class="op-7"></span>
+                      <small class="text-warning"><i class="ri-shape-line" style="font-size: 20px;"></i></small>
+                      <span class="fw-bold text-warning">Rajasthan</span>
+                    </small>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-warning">
+                    <div class="quick-actions-header">
+                      <span class="title mb-1">Branch</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items">
+                        <div class="row m-0">
+                          <div class="input-group my-2">
+                            <span class="px-2 py-2">Branch: </span>
+                            <select class="form-select form-control-sm" name="branch" id="inputGroupSelect1">
+                              <option value="">Rajasthan</option>
+                              <option value="">Bihar</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <small class="profile-username">
+                      <span class="op-7"></span>
+                      <small class="text-info"><i class="ri-building-4-line" style="font-size: 20px;"></i></small>
+                      <span class="fw-bold text-info">Rajasthan ULB</span>
+                    </small>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-info">
+                    <div class="quick-actions-header">
+                      <span class="title mb-1">Department</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items">
+                        <div class="row m-0">
+                          <div class="input-group my-2">
+                            <span class="px-2 py-2">Department: </span>
+                            <select class="form-select form-control-sm" name="department" id="inputGroupSelect02">
+                              <option value="">Rajasthan ULB</option>
+                              <option value="">Bihar ULB</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <small class="profile-username">
+                      <span class="op-7"></span>
+                      <small class="text-secondary"><i class="ri-government-line" style="font-size: 20px;"></i></small>
+                      <span class="fw-bold text-secondary">Nagar Nigam Jaipur</span>
+                    </small>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-secondary">
+                    <div class="quick-actions-header project-header">
+                      <span class="title mb-1">Project</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items ">
+                        <div class="row m-0">
+                          <div class="input-group my-2">
+                            <span class="px-2 py-2">Project: </span>
+                            <select class="form-select form-control-sm" name="project" id="inputGroupSelect03">
+                              <option value="">Nagar Nigam Jaipur</option>
+                              <option value="">Nagar Nigam Kota</option>
+                              <option value="">Nagar Nigam Udaipur</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="ri-gallery-view-2" style="font-size: 20px;"></i>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn">
+                    <div class="quick-actions-header">
+                      <span class="title mb-1">Applications</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items">
+                        <div class="row m-0">
+                          <a class="col-6 col-md-4 col-sm-6 col-12 p-0" href="index.html">
+                            <div class="quick-actions-item">
+                              <div class="avatar-item bg-secondary rounded-circle">
+                                <i class="ri-user-settings-line"></i>
+                              </div>
+                              <span class="text">HRMS Admin</span>
+                            </div>
+                          </a>
+                          <a class="col-6 col-md-4 col-sm-6 col-12 p-0" href="#">
+                            <div class="quick-actions-item">
+                              <div class="avatar-item bg-info rounded-circle">
+                                <i class="ri-user-community-line"></i>
+                              </div>
+                              <span class="text">HRMS User</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false" >
+                    <div class="avatar-sm">
+                      <img src="images/profile/user.png" alt="profile" class="avatar-img rounded-circle" />
+                    </div>
+                    <span class="profile-username">
+                      <span class="op-7"></span>
+                      <span class="fw-bold">Super Admin</span>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li>
+                        <div class="user-box">
+                          <div class="avatar-lg">
+                            <img src="images/profile/user.png" alt="image profile" class="avatar-img rounded" />
+                          </div>
+                          <div class="u-text">
+                            <h4>Super Admin Name</h4>
+                            <p class="text-muted">Employee designation</p>
+                            <p class="text-muted">Employee id</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="my-profile.html">My Profile</a>
+                        <a class="dropdown-item" href="change-password.html">Change Password</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a class="nav-link" href="#">
+                    <i class="ri-logout-box-r-line" style="font-size: 20px;"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="page-header d-print-none">
+              <h4 class="fw-bold mb-3">Add New Employee</h4>
+              <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                  <a href="index.html">
+                    <i class="ri-home-3-line"></i>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="ri-arrow-right-s-line"></i>
+                </li>
+                <li class="nav-item">
+                  <span class="op-7">Employee Management</span>
+                </li>
+                <li class="separator">
+                  <i class="ri-arrow-right-s-line"></i>
+                </li>
+                <li class="nav-item">
+                  <span class="op-7">Add New Employee</span>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                
+                <div class="card card-stats card-round">
+                  
+                  <div class="card-body">
+            
+                      <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                          <div class="card">
+                            <div class="card-header">
+                              <h4 class="card-title">Employee Profile</h4>
+                            </div>
+                            <div class="card-body">
+                              <ul class="nav nav-pills nav-dark-secondary" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                  <a class="nav-link active" id="pills-basic-tab" data-bs-toggle="pill" href="#pills-basic" role="tab" aria-controls="pills-basic" aria-selected="true">Basic Info</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <a class="nav-link" id="pills-professional-tab" data-bs-toggle="pill" href="#pills-professional" role="tab" aria-controls="pills-professional" aria-selected="false" tabindex="-1">Professional</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <a class="nav-link" id="pills-accounts-tab" data-bs-toggle="pill" href="#pills-accounts" role="tab" aria-controls="pills-accounts" aria-selected="false" tabindex="-1">Accounts</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <a class="nav-link" id="pills-documents-tab" data-bs-toggle="pill" href="#pills-documents" role="tab" aria-controls="pills-documents" aria-selected="false" tabindex="-1">Documents</a>
+                                </li>
+                              </ul>
+                              <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-basic" role="tabpanel" aria-labelledby="pills-basic-tab">
+                                  <div class="row p-2">
+                                    <div class="col-lg-3 col-md-3">
+                                      <div class="form-group">
+                                        <img src="images/profile/user.png" style="height:120px; margin:auto; width:120px; border:#CCCCCC solid 1px; margin-top:10px;" id="userPhoto" alt="Profile image"> 
+                                        <input type="file" class="form-control my-1" id="profileImage" name="profileImage">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9" style="padding-left:0px; padding-right:0px;">
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="employeeName">Employee Name</label>
+                                            <input type="text" id="employeeName" name="employeeName" class="form-control" placeholder="Enter Employee Name" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="fatherName">Father's Name</label>
+                                            <input type="text" id="fatherName" name="fatherName" class="form-control" placeholder="Enter Father's Name" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="motherName">Mother's Name</label>
+                                            <input type="text" id="motherName" name="motherName" class="form-control" placeholder="Enter Mother's Name" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="dob">Date Of Birth</label>
+                                            <input type="date" id="dob" name="dob" class="form-control" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <select class="form-select" id="gender" name="gender" required>
+                                              <option value="">Select</option>
+                                              <option value="male">Male</option>
+                                              <option value="female">Female</option>
+                                              <option value="others">Others</option>
+                                            </select>    
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="doj">Date Of Joining</label>
+                                            <input type="date" id="doj" name="doj" class="form-control" required>
+                                          </div>
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="height">Height In CM.</label>
+                                        <input type="number" id="height" name="height" class="form-control" maxlength="10" placeholder="Enter Height">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="weight">Weight In KG</label>
+                                        <input type="number" id="weight" name="weight" class="form-control" maxlength="10" placeholder="Enter Weight">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="bloodGroup">Blood Group</label>
+                                        <select class="form-select" id="bloodGroup" name="bloodGroup" required>
+                                          <option value="">Select</option>
+                                          <option value="">A+</option>
+                                          <option value="">O+</option>
+                                          <option value="">B+</option>
+                                          <option value="">AB+</option>
+                                          <option value="">A-</option>
+                                          <option value="">O-</option>
+                                          <option value="">B-</option>
+                                          <option value="">AB-</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="maritalStatus">Marital Status</label>
+                                        <select class="form-select" id="maritalStatus" name="maritalStatus" required>
+                                          <option value="">Select</option>
+                                          <option value="">Married</option>
+                                          <option value="">Unmarried</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="emailId">Email ID</label>
+                                        <input type="email" id="emailId" name="emailId" class="form-control" placeholder="Enter Email ID">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="offecialEmailId">Official Email</label>
+                                        <input type="email" id="offecialEmailId" name="offecialEmailId" class="form-control" placeholder="Enter Official Email">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="panNumber">Pan Number</label>
+                                        <input type="text" id="panNumber" name="panNumber" class="form-control" maxlength="10" placeholder="10 Digits Only">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="uidNumber">UID Number</label>
+                                        <input type="text" id="uidNumber" name="uidNumber" class="form-control" maxlength="16" placeholder="12 Digits Only" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="unaNumber">UNA Number</label>
+                                        <input type="text" id="unaNumber" name="unaNumber" class="form-control" maxlength="20" placeholder="12 Digits Only">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="esicNumber">ESIC Number</label>
+                                        <input type="text" id="esicNumber" name="esicNumber" class="form-control" placeholder="Enter ESIC Number">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="pfNumber">PF Number</label>
+                                        <input type="text" id="pfNumber" name="pfNumber" class="form-control" placeholder="Enter PF Number">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="maritalStatus">Qualification Of Employee</label>
+                                        <select class="form-select" id="maritalStatus" name="maritalStatus" required>
+                                          <option value="">Select</option>
+                                          <option value="">ILLITERATE</option>
+                                          <option value="">NON-METRIC</option>
+                                          <option value="">METRIC</option>
+                                          <option value="">SENIOR-SECONDARY</option>
+                                          <option value="">GRADUATE</option>
+                                          <option value="">POST-GRADUATE</option>
+                                          <option value="">TECHNICAL(PROFESSIONAL)</option>
+                                          <option value="">DOCTORATE</option>
+                                          <option value="">DIPLOMA</option>
+                                          <option value="">OTHERS</option>
+                                          <option value="">MBA</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="contactNumber1">Contact Number</label>
+                                        <input type="text" id="contactNumber1" name="contactNumber1" class="form-control" maxlength="10" placeholder="10 Digits Only" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="contactNumber2">Another Contact Number</label>
+                                        <input type="text" id="contactNumber2" name="contactNumber2" class="form-control" maxlength="10" placeholder="10 Digits Only">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="presentAddress">Present Address</label>
+                                        <textarea id="presentAddress" name="presentAddress" class="form-control" rows="3" cols="20" placeholder="Enter Present Address" maxlength="200" required></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="presentCity">Present City</label>
+                                        <input type="text" id="presentCity" name="presentCity" class="form-control" placeholder="Enter Present City" maxlength="100" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="presentState">Present State</label>
+                                        <select class="form-select" id="presentState" name="presentState" required>
+                                          <option value="">Select</option>
+                                          <option value="ARUNACHALPRADESH">ARUNACHALPRADESH</option>                                     
+                                          <option value="ASSAM">ASSAM</option>                                    
+                                          <option value="BIHAR">BIHAR</option>                                    
+                                          <option value="CHHATTISGARH">CHHATTISGARH</option>                                  
+                                          <option value="DELHI">DELHI</option>                                    
+                                          <option value="GOA">GOA</option>  
+                                          <option value="GUJARAT">GUJARAT</option>
+                                          <option value="HARYANA">HARYANA</option>
+                                          <option value="HIMACHALPRADESH">HIMACHALPRADESH</option>
+                                          <option value="JHARKHAND">JHARKHAND</option>
+                                          <option value="KARNATAKA">KARNATAKA</option>
+                                          <option value="KERALA">KERALA</option>
+                                          <option value="MADHYAPRADESH">MADHYAPRADESH</option>
+                                          <option value="	MAHARASHTRA">	MAHARASHTRA</option>
+                                          <option value="MANIPUR">MANIPUR</option>
+                                          <option value="	MEGHALAYA">	MEGHALAYA</option>
+                                          <option value="	MIZORAM">	MIZORAM</option>
+                                          <option value="	NAGALAND">	NAGALAND</option>
+                                          <option value="	ODISHA">	ODISHA</option>
+                                          <option value="	PUNJAB">	PUNJAB</option>
+                                          <option value="	RAJASTHAN">	RAJASTHAN</option>
+                                          <option value="SIKKIM">SIKKIM</option>
+                                          <option value="TAMILNADU">TAMILNADU</option>
+                                          <option value="	TAMILNADU">	TAMILNADU</option>
+                                          <option value="	TELANGANA">	TELANGANA</option>
+                                          <option value="TESTING">TESTING</option>
+                                          <option value="	TRIPURA">	TRIPURA</option>
+                                          <option value="	UTTARAKHAND">	UTTARAKHAND</option>
+                                          <option value="UTTARPRADESH">UTTARPRADESH</option>
+                                          <option value="WESTBENGAL">WESTBENGAL</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="presentPincode">Present Pincode</label>
+                                        <input type="text" id="presentPincode" name="presentPincode" class="form-control" placeholder="Enter Pincode" maxlength="6" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-12">
+                                      <div class="form-group">
+                                        <span for="checkAddress" style="font-size: 14px; color: #495057;"> Check, if Present Address is same as Permanent Address: </span>
+                                        <input type="checkbox" name="checkAddress" id="checkAddress" class="mx-1">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="relation">Relation Ship Name</label>
+                                        <input type="text" id="relation" name="relation" class="form-control" placeholder="Enter Relation Ship Name" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="relationType">Relation Ship Type</label>
+                                        <input type="text" id="relationType" name="relationType" class="form-control" placeholder="Enter Relation Ship Type" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="parentMobile1">Parent Mobile</label>
+                                        <input type="number" id="parentMobile1" name="parentMobile1" class="form-control" maxlength="10" placeholder="10 Digits Only" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="parentMobile2">Another Mobile No.</label>
+                                        <input type="number" id="parentMobile2" name="parentMobile2" class="form-control" maxlength="10" placeholder="10 Digits Only">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="permanentAddress">Permanent Address</label>
+                                        <textarea id="permanentAddress" name="permanentAddress" class="form-control" rows="3" cols="20" placeholder="Enter Permanent Address" required></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="permanentCity">Permanent City</label>
+                                        <input type="text" id="presentCity" name="presentCity" class="form-control" placeholder="Enter Parmanent City" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="permanentState">Permanent State</label>
+                                        <select class="form-select" id="presentState" name="presentState" required>
+                                          <option value="">Select</option>
+                                          <option value="ARUNACHALPRADESH">ARUNACHALPRADESH</option>                                     
+                                          <option value="ASSAM">ASSAM</option>                                    
+                                          <option value="BIHAR">BIHAR</option>                                    
+                                          <option value="CHHATTISGARH">CHHATTISGARH</option>                                  
+                                          <option value="DELHI">DELHI</option>                                    
+                                          <option value="GOA">GOA</option>  
+                                          <option value="GUJARAT">GUJARAT</option>
+                                          <option value="HARYANA">HARYANA</option>
+                                          <option value="HIMACHALPRADESH">HIMACHALPRADESH</option>
+                                          <option value="JHARKHAND">JHARKHAND</option>
+                                          <option value="KARNATAKA">KARNATAKA</option>
+                                          <option value="KERALA">KERALA</option>
+                                          <option value="MADHYAPRADESH">MADHYAPRADESH</option>
+                                          <option value="	MAHARASHTRA">	MAHARASHTRA</option>
+                                          <option value="MANIPUR">MANIPUR</option>
+                                          <option value="	MEGHALAYA">	MEGHALAYA</option>
+                                          <option value="	MIZORAM">	MIZORAM</option>
+                                          <option value="	NAGALAND">	NAGALAND</option>
+                                          <option value="	ODISHA">	ODISHA</option>
+                                          <option value="	PUNJAB">	PUNJAB</option>
+                                          <option value="	RAJASTHAN">	RAJASTHAN</option>
+                                          <option value="SIKKIM">SIKKIM</option>
+                                          <option value="TAMILNADU">TAMILNADU</option>
+                                          <option value="	TAMILNADU">	TAMILNADU</option>
+                                          <option value="	TELANGANA">	TELANGANA</option>
+                                          <option value="TESTING">TESTING</option>
+                                          <option value="	TRIPURA">	TRIPURA</option>
+                                          <option value="	UTTARAKHAND">	UTTARAKHAND</option>
+                                          <option value="UTTARPRADESH">UTTARPRADESH</option>
+                                          <option value="WESTBENGAL">WESTBENGAL</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="permanentPincode">Permanent Pincode</label>
+                                        <input type="text" id="permanentPincode" name="permanentPincode" class="form-control" maxlength="6" placeholder="Enter Permanent Pincode" required> 
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="d-print-none">
+                                      <p class="text-center pt-2">
+                                          <button type="submit" class="btn btn-info btn-sm" name="submit"><strong>Next</strong></button>
+                                      </p>
+                                  </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-professional" role="tabpanel" aria-labelledby="pills-professional-tab">
+                                  <div class="row col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="designation">Branch Department Designation</label>
+                                        <input type="text" id="designation" name="designation" class="form-control" placeholder="Enter Designation" required>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="grade">Grade</label>
+                                        <select class="form-select" id="grade" name="grade" required>
+                                          <option value="">Select Grade</option>
+                                          <option value="">M</option>
+                                          <option value="">E1-Jaipur</option>
+                                          <option value="">M1</option>
+                                          <option value="">E2-Jaipur</option>
+                                          <option value="">F1</option>
+                                          <option value="">F</option>
+                                          <option value="">E1</option>
+                                          <option value="">E</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="employementType">Employement Type</label>
+                                        <select class="form-select" id="employementType" name="employementType" required>
+                                          <option value="">Select Employement Type</option>
+                                          <option value="">PROBATION</option>
+                                          <option value="">TRAINEE</option>
+                                          <option value="">PERMANENT</option>
+                                          <option value="">UNDER NOTICE</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="reportingOfficer">Reporting Officer</label>
+                                        <input type="text" id="reportingOfficer" name="reportingOfficer" class="form-control" placeholder="Enter Reporting Officer Name">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="deputedProject">Deputed Project</label>
+                                        <select class="form-select" id="deputedProject" name="deputedProject" placeholder="Enter Project" required>
+                                          <option value="">Select Project</option>
+                                          <option value="">NAGAR NIGAM JAIPUR HERITAGE</option>
+                                          <option value="">UDAIPUR NAGAR NIGAM</option>
+                                          <option value="">NAGAR NIGAM JAIPUR GREATER</option>
+                                          <option value="">KOTA NAGAR NIGAM</option>
+                                          <option value="">NORTH KOTA NAGAR NIGAM</option>
+                                          <option value="">CHURU MUNICIPAL COUNCIL</option>
+                                          <option value="">CHOMU MUNICIPAL COUNCIL</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="effectiveDate ">Effective Date</label>
+                                        <input type="date" id="effectiveDate" name="effectiveDate" class="form-control" required>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="d-print-none">
+                                      <p class="text-center pt-2">
+                                          <button type="submit" class="btn btn-info btn-sm" name="submit"><strong>Next</strong></button>
+                                      </p>
+                                  </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-accounts" role="tabpanel" aria-labelledby="pills-accounts-tab">
+                                  <div class="row col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="bankName">Bank Name</label>
+                                        <select class="form-select" id="bankName" name="bankName" required>
+                                          <option value="">Select Bank</option>
+                                            <option value="AIRTEL PAYMENT BANK">AIRTEL PAYMENT BANK</option>
+                                            <option value="ALLAHABAD BANK">ALLAHABAD BANK</option>
+                                            <option value="ANDB">ANDB</option>
+                                            <option value="ANDHRA BANK">ANDHRA BANK</option>
+                                            <option value="AU SMALL FINANCE BANK">AU SMALL FINANCE BANK</option>
+                                            <option value="AXIS BANK">AXIS BANK</option>
+                                            <option value="BANDHAN BANK">BANDHAN BANK</option>
+                                            <option value="BANK OF BARODA">BANK OF BARODA</option>
+                                            <option value="BANK OF INDIA">BANK OF INDIA</option>
+                                            <option value="BANK OF MAHARASHTRA">BANK OF MAHARASHTRA</option>\
+                                            <option value="BOI">BOI</option>
+                                            <option value="CANARA BANK">CANARA BANK</option>
+                                            <option value="CENTRAL BANK OF INDIA">CENTRAL BANK OF INDIA</option>
+                                            <option value="CNRB">CNRB</option>
+                                            <option value="CORPORATION BANK">CORPORATION BANK</option>
+                                            <option value="DCB BANK">DCB BANK</option>
+                                            <option value="DENA BANK">DENA BANK</option>
+                                            <option value="EQUITAS SMALL FINANCE BANK">EQUITAS SMALL FINANCE BANK</option>
+                                            <option value="FEDERAL BANK">FEDERAL BANK</option>
+                                            <option value="FINO PAYMENT BANK LIMITED ">FINO PAYMENT BANK LIMITED </option>
+                                            <option value="HDFC">HDFC</option>
+                                            <option value="ICICI BANK">ICICI BANK</option>
+                                            <option value="IDBI">IDBI</option>
+                                            <option value="IDFC FIRST BANK">IDFC FIRST BANK</option>
+                                            <option value="INDIAN BANK">INDIAN BANK</option>
+                                            <option value="INDIAN OVERSEAS BANK">INDIAN OVERSEAS BANK</option>
+                                            <option value="INDINA POST PAYMENTS BANK">INDINA POST PAYMENTS BANK</option>
+                                            <option value="INDUSIND BANK">INDUSIND BANK</option>
+                                            <option value="JGB">JGB</option>
+                                            <option value="KARNATAKA BANK">KARNATAKA BANK</option>
+                                            <option value="KOTAK MAHINDRA BANK">KOTAK MAHINDRA BANK</option>
+                                            <option value="MADHYA BIHAR GRAMIN BANK">MADHYA BIHAR GRAMIN BANK</option>
+                                            <option value="MYBANK">MYBANK</option>
+                                            <option value="ORIENTAL BANK OF COMMERCE">ORIENTAL BANK OF COMMERCE</option>
+                                            <option value="PNB">PNB</option>
+                                            <option value="PUNJAB &amp; SIND BANK">PUNJAB &amp; SIND BANK</option>
+                                            <option value="RAJASTHAN MARUDHARA GRAMIN BANK">RAJASTHAN MARUDHARA GRAMIN BANK</option>
+                                            <option value="SOUTH INDIAN BANK">SOUTH INDIAN BANK</option>
+                                            <option value="STATE BANK OF INDIA">STATE BANK OF INDIA</option>
+                                            <option value="SWISS BANK OF INDIA">SWISS BANK OF INDIA</option>
+                                            <option value="SYNDICATE BANK">SYNDICATE BANK</option>
+                                            <option value=" THE NAINITAL BANK LIMITED"> THE NAINITAL BANK LIMITED</option>
+                                            <option value="UBI">UBI</option>
+                                            <option value="UCO BANK">UCO BANK</option>
+                                            <option value="UDAIPUR CENTRAL CO OP BANK LTD">UDAIPUR CENTRAL CO OP BANK LTD</option>
+                                            <option value="UDAIPUR MAHILA URBAN COOPERATIVE BANK LIMITED ">UDAIPUR MAHILA URBAN COOPERATIVE BANK LIMITED </option>
+                                            <option value="UDAIPUR URBAN COOPERATIVE BANK">UDAIPUR URBAN COOPERATIVE BANK</option>
+                                            <option value="UNION BANK OF INDIA">UNION BANK OF INDIA</option>
+                                            <option value="UNITED BANK OF INIDA">UNITED BANK OF INIDA</option>
+                                            <option value="UNITED COMMUNITY BANK">UNITED COMMUNITY BANK</option>
+                                            <option value="UNITED TRUST BANK">UNITED TRUST BANK</option>
+                                            <option value="UTBI">UTBI</option>
+                                            <option value="UTKARSH SMALL FINANCE BANK ">UTKARSH SMALL FINANCE BANK </option>
+                                            <option value="UTTAR BIHAR GRAMIN BANK">UTTAR BIHAR GRAMIN BANK</option>
+                                            <option value="Vananchal Gramin Bank">Vananchal Gramin Bank</option>
+                                            <option value="VIJAYA BANK">VIJAYA BANK</option>
+                                            <option value="YES BANK">YES BANK</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="bankBranch">Bank Branch</label>
+                                        <input type="text" id="bankBranch" name="bankBranch" class="form-control" placeholder="Enter Bank Branch">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="bankAccountNumber">Bank Account Number</label>
+                                        <input type="text" id="bankAccountNumber" name="bankAccountNumber" class="form-control" placeholder="Enter Bank Account Number">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="ifscCode">IFSC Code</label>
+                                        <input type="text" id="ifscCode" name="ifscCode" class="form-control" placeholder="Enter IFSC Code">
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                      <div class="form-group">
+                                        <label for="salariedAccount">Salaried Account</label>
+                                        <select class="form-select" id="salariedAccount" name="salariedAccount" required>
+                                          <option value="">Select Project</option>
+                                          <option value="">YES</option>
+                                          <option value="">NO</option>
+                                        </select>    
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="d-print-none">
+                                      <p class="text-center pt-2">
+                                          <button type="submit" class="btn btn-info btn-sm" name="submit"><strong>Next</strong></button>
+                                      </p>
+                                  </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-documents" role="tabpanel" aria-labelledby="pills-documents-tab">
+                                  <div class="row">
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-12">
+                                      <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="documentName">Document Name</label>
+                                            <select class="form-select" id="documentName" name="documentName" required>
+                                              <option value="">Select Document</option>
+                                              <option value="">VOTER CARD</option>
+                                              <option value="">AADHAR CARD</option>
+                                              <option value="">ACCOUNT DOC</option>
+                                              <option value="">JOINING LETTER</option>
+                                              <option value="">TERMINATION LETTER</option>
+                                              <option value="">PERMOTION LETTER</option>
+                                              <option value="">REJOINING LETTER</option>
+                                              <option value="">POST GRADUATE</option>
+                                              <option value="">PHD</option>
+                                              <option value="">ASSOCIATE DEGREE</option>
+                                              <option value="">BACHELOR'S DEGREE</option>
+                                              <option value="">GRADUATE</option>
+                                              <option value="">MATRIC DOC</option>
+                                              <option value="">INTERMEDIATE</option>
+                                              <option value="">CERTIFICATE</option>
+                                              <option value="">PAN CARD</option>
+                                            </select>    
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="docImage">Upload Image Of Document</label>
+                                            <input type="file" id="docImage" name="docImage" class="form-control" required>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-6">
+                                          <div class="form-group">
+                                            <label for="remarks">Remarks</label>
+                                            <input type="text" id="remarks" name="remarks" class="form-control" placeholder="Enter Remarks">
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-12">
+                                      <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-12 mx-3">
+                                          <button type="submit" class="btn btn-primary btn-xs my-2" name="submit"><strong>Add</strong></button>
+
+                                          <button type="submit" class="btn btn-danger btn-xs" name="submit"><strong>Remove</strong></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="d-print-none">
+                                      <p class="text-center pt-2">
+                                          <button type="submit" class="btn btn-success btn-sm" name="submit"><strong>Save</strong></button>
+                                      </p>
+                                     </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- footer start -->
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <div class="copyright">
+              <a href="#" target="_blank">Sparrow Softech Pvt Ltd</a>
+            </div>
+          </div>
+        </footer>
+        <!-- footer end -->
+      </div>
+    </div>
+
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js" integrity="sha512-5AcaBUUUU/lxSEeEcruOIghqABnXF8TWqdIDXBZ2SNEtrTGvD408W/ShtKZf0JNjQUfOiRBJP+yHk6Ab2eFw3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="static/js/admin.js"></script>
+</body>
+</html>
