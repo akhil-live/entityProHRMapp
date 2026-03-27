@@ -4442,3 +4442,69 @@ body {
     page-break-inside: avoid;
   }
 }
+
+/* Attendance table */
+#attedanceTable .sticky-col {
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 2;
+}
+#attedanceTable .cell-text {
+  font-weight:bold;
+}
+.table > tbody > tr > .present {
+  background: #d4edda;
+}
+.table > tbody > tr > .half_day_present {
+  background: #9be9ad;
+}
+.table > tbody > tr > .absent {
+  background: #f7c9cd;
+}
+.table > tbody > tr > .holiday {
+  background: #fff3cd;
+}
+.table > tbody > tr > .leave {
+  background: #c2cdf7;
+}
+.table > tbody > tr > .sunday {
+  background: #bbbbbb;
+}
+.table > tbody > tr > .not_applicable {
+  background: #eeeeee;
+}
+
+/* Calendar */
+/* Calendar header */
+.fc-toolbar-title{
+font-weight:600;
+font-size:20px;
+}
+/* Event style */
+.fc-event{
+cursor:pointer;
+border:none;
+padding:4px 6px;
+font-size:12px;
+border-radius:6px;
+transition:0.2s;
+}
+.fc-event:hover{
+transform:scale(1.05);
+opacity:.9;
+}
+/* Sunday Highlight */
+.fc-day-sun{
+background:#e0e0e0 !important;
+}
+.fc-col-header-cell.fc-day-sun{
+background:#bdbdbd !important;
+color:white;
+font-weight:bold;
+}
+/* Today highlight */
+.fc-day-today{
+background:#e8f4ff !important;
+border:2px solid #0d6efd;
+}
