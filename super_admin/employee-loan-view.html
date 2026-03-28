@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branch Terminated / Resign List</title>
+    <title>Loan Application for Review</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css/admin.css">
     <link rel="stylesheet" href="static/css/responsive.css">
 
@@ -292,90 +293,6 @@
                     </form>
                   </ul>
                 </li>
-                <li class="nav-item topbar-user dropdown hidden-caret">
-                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                    <small class="profile-username">
-                      <span class="op-7"></span>
-                      <small class="text-warning"><i class="ri-shape-line" style="font-size: 20px;"></i></small>
-                      <span class="fw-bold text-warning">Rajasthan</span>
-                    </small>
-                  </a>
-                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-warning">
-                    <div class="quick-actions-header">
-                      <span class="title mb-1">Branch</span>
-                    </div>
-                    <div class="quick-actions-scroll scrollbar-outer">
-                      <div class="quick-actions-items">
-                        <div class="row m-0">
-                          <div class="input-group my-2">
-                            <span class="px-2 py-2">Branch: </span>
-                            <select class="form-select form-control-sm" name="branch" id="inputGroupSelect1">
-                              <option value="">Rajasthan</option>
-                              <option value="">Bihar</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </li>
-                <li class="nav-item topbar-user dropdown hidden-caret">
-                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                    <small class="profile-username">
-                      <span class="op-7"></span>
-                      <small class="text-info"><i class="ri-building-4-line" style="font-size: 20px;"></i></small>
-                      <span class="fw-bold text-info">Rajasthan ULB</span>
-                    </small>
-                  </a>
-                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-info">
-                    <div class="quick-actions-header">
-                      <span class="title mb-1">Department</span>
-                    </div>
-                    <div class="quick-actions-scroll scrollbar-outer">
-                      <div class="quick-actions-items">
-                        <div class="row m-0">
-                          <div class="input-group my-2">
-                            <span class="px-2 py-2">Department: </span>
-                            <select class="form-select form-control-sm" name="department" id="inputGroupSelect02">
-                              <option value="">Rajasthan ULB</option>
-                              <option value="">Bihar ULB</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </li>
-                <li class="nav-item topbar-user dropdown hidden-caret">
-                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                    <small class="profile-username">
-                      <span class="op-7"></span>
-                      <small class="text-secondary"><i class="ri-government-line" style="font-size: 20px;"></i></small>
-                      <span class="fw-bold text-secondary">Nagar Nigam Jaipur</span>
-                    </small>
-                  </a>
-                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-secondary">
-                    <div class="quick-actions-header project-header">
-                      <span class="title mb-1">Project</span>
-                    </div>
-                    <div class="quick-actions-scroll scrollbar-outer">
-                      <div class="quick-actions-items ">
-                        <div class="row m-0">
-                          <div class="input-group my-2">
-                            <span class="px-2 py-2">Project: </span>
-                            <select class="form-select form-control-sm" name="project" id="inputGroupSelect03">
-                              <option value="">Nagar Nigam Jaipur</option>
-                              <option value="">Nagar Nigam Kota</option>
-                              <option value="">Nagar Nigam Udaipur</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
                 <li class="nav-item topbar-icon dropdown hidden-caret">
                   <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                     <i class="ri-gallery-view-2" style="font-size: 20px;"></i>
@@ -453,75 +370,131 @@
           <!-- End Navbar -->
         </div>
 
+        <div class="modal fade" id="fileModal" tabindex="-1" >
+          <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h5 class="modal-title">File Preview</h5>
+
+                <div class="btn-group me-2 ms-2">
+                  <button id="fullscreenBtn" class="btn btn-sm btn-outline-primary d-none" onclick="toggleFullscreen()">
+                    <i class="ri-fullscreen-line"></i>
+                  </button>
+                </div>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <div class="modal-body">
+
+                <div id="zoomControls" class="mb-2 text-center d-none">
+                  <button class="btn btn-sm btn-info" onclick="zoomIn()"><i class="ri-add-line"></i></button>
+                  <button class="btn btn-sm btn-info" onclick="zoomOut()"><i class="ri-subtract-line"></i></button>
+                  <button class="btn btn-sm btn-secondary" onclick="resetZoom()">Reset</button>
+                </div>
+
+                <div id="fileContainer"
+                    style="width:100%; height:75vh; max-height:calc(100vh - 160px); overflow:auto; text-align:center;">
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Branch Termination / Resign List</h4>
-              <ul class="breadcrumbs mb-3">
-                <li class="nav-home">
-                  <a href="index.html">
-                    <i class="ri-home-3-line"></i>
-                  </a>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Employee Management</span>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Branch Termination / Resign List</span>
-                </li>
-              </ul>
+              <h4 class="fw-bold mb-3">Loan Application for Review</h4>
             </div>
-             <div class="row">
-              <div class="col-md-12">
-                <div class="card">
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                
+                <div class="card card-stats card-round">
+                  <div class="card-header d-print-none text-start">
+                      <a href="employee-loan-list.html"><button class="btn btn-black btn-sm"><strong><i class="ri-arrow-left-circle-line"></i> Back</strong></button></a>
+                  </div>
+                  
                   <div class="card-body">
-                    <div class="table-responsive" id="printableArea">
-                          <div class="d-print-none">
-                            <p class="text-start">
-                                <button type="submit" class="btn btn-primary btn-sm" name="submit" id="exportExcel" onclick="exportExcel()"><strong><i class="ri-download-2-line"></i> Export</strong></button>
-                            </p>
-                          </div>
-                      <table id="basic-datatables" class="display table table-hover table-bordered">
-                        <thead>
-                          <tr>
-                            <th colspan="6" class="text-center bg-light"><strong>Branch Terminated / Resign List</strong></th>
-                          </tr>
-                          <tr class="text-center">
-                            <th>#</th>
-                            <th>Employee Code</th>
-                            <th>Employee Name</th>
-                            <th>Designation</th>
-                            <th>Date of Joining</th>
-                            <th>Termination Date</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td class="text-center">SSPL-12345</td>
-                            <td class="text-center">CHANDRA MOHAN SHARMA</td>
-                            <td class="text-center">TAX COLLECTOR</td>
-                            <td class="text-center">Sept 1, 2020</td>
-                            <td class="text-center">31-12-2021</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="emploayeeName">Employee Name</label>
+                          <p id="emploayeeName"><strong>VIMAL KUMAR SHARMA</strong></p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="emploayeeCode">Employee Code</label>
+                          <p id="emploayeeCode"><strong>SSPL-12345</strong></p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="emploayeeDesignation">Employee Designation</label>
+                          <p id="emploayeeDesignation"><strong>Manager</strong></p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="loanAmount">Loan Amount(₹)</label>
+                          <p id="loanAmount"><strong>20000</strong></p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="applyDate">Apply Date</label>
+                          <p id="applyDate"><strong>24 March 2026</strong></p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="approvalLoanAmount">Enter Approval Amount(₹)</label>
+                          <input type="number" class="form-control" id="approvalLoanAmount" name="approvalLoanAmount" value="" placeholder="Enter approval Loan Amount">
+                        </div>                 
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="Purpose">Purpose</label><br>
+                          <p id="Purpose"><strong>Paying for higher education.</strong></p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="remark">Remark</label><br>
+                          <p id="Purpose"><strong>Application deadline is 10 April 2026.</strong></p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <label for="status">Loan Status</label><br>
+                          <select id="status" class="form-control" required>
+                            <option value="">Select Status</option>
+                            <option value="">Pending</option>
+                            <option value="">Under Review</option>
+                            <option value="">Approved</option>
+                            <option value="">Rejected</option>
+                          </select>
+                        </div>                 
+                      </div>
+                    </div>
+                    <div class="d-print-none">
+                      <p class="text-start p-3">
+                        <button type="submit" class="btn btn-success btn-sm" name="submit"><strong>Submit</strong></button>
+                      </p>
                     </div>
                   </div>
-
+                  
                 </div>
               </div>
+              
             </div>
             
           </div>
         </div>
-
         <!-- footer start -->
         <footer class="footer">
           <div class="container-fluid d-flex justify-content-between">
@@ -534,15 +507,17 @@
       </div>
     </div>
 
-    
 
+  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js" integrity="sha512-5AcaBUUUU/lxSEeEcruOIghqABnXF8TWqdIDXBZ2SNEtrTGvD408W/ShtKZf0JNjQUfOiRBJP+yHk6Ab2eFw3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="static/js/datatables/datatables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 <script src="static/js/admin.js"></script>
 <script>
-  $(document).ready(function () {
+
+        $(document).ready(function () {
         $("#basic-datatables").DataTable({});
 
         $("#multi-filter-select").DataTable({
@@ -597,6 +572,108 @@
           $("#addRowModal").modal("hide");
         });
       });
+
+    let scale = 1;
+    const step = 0.2;
+    const minScale = 0.5;
+    const maxScale = 4;
+    let isFullscreen = false;
+
+    function openModal(type, fileUrl) {
+      const container = document.getElementById('fileContainer');
+      const zoomControls = document.getElementById('zoomControls');
+      const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+      scale = 1;
+      container.innerHTML = '';
+      zoomControls.classList.add('d-none');
+      fullscreenBtn.classList.add('d-none');
+
+      if (type === 'image') {
+        zoomControls.classList.remove('d-none');
+        fullscreenBtn.classList.remove('d-none');
+
+        container.innerHTML = `
+          <img id="previewImage"
+                src="${fileUrl}"
+                class="img-fluid"
+                style="transform:scale(1); transition:transform .15s ease; cursor:zoom-in; user-select: none;">
+          `;
+
+          enableImageInteractions();
+        }
+
+        if (type === 'pdf') {
+          
+        container.innerHTML = `
+            <iframe src="${fileUrl}"
+                    style="width:100%; height:100%; border:none;">
+            </iframe>
+          `;
+        }
+
+        new bootstrap.Modal(document.getElementById('fileModal')).show();
+      }
+
+
+      function zoomIn() {
+        if (scale < maxScale) scale += step;
+        applyZoom();
+      }
+
+      function zoomOut() {
+        if (scale > minScale) scale -= step;
+        applyZoom();
+      }
+
+      function resetZoom() {
+        scale = 1;
+        applyZoom();
+      }
+
+      function applyZoom() {
+        const img = document.getElementById('previewImage');
+        if (img) {
+          img.style.transform = `scale(${scale})`;
+        }
+      }
+
+      function enableImageInteractions() {
+        const img = document.getElementById('previewImage');
+        const container = document.getElementById('fileContainer');
+
+        img.addEventListener('wheel', function (e) {
+          e.preventDefault();
+          e.deltaY < 0 ? zoomIn() : zoomOut();
+        });
+
+        img.addEventListener('dblclick', function () {
+          scale = scale === 1 ? 2 : 1;
+          applyZoom();
+        });
+      }
+
+      function toggleFullscreen() {
+        const modalContent = document.querySelector('#fileModal .modal-content');
+
+        if (!document.fullscreenElement) {
+          modalContent.requestFullscreen();
+          isFullscreen = true;
+        } else {
+          document.exitFullscreen();
+          isFullscreen = false;
+        }
+      }
+
+      document.getElementById('fileModal')
+        .addEventListener('hidden.bs.modal', () => {
+          document.getElementById('fileContainer').innerHTML = '';
+          scale = 1;
+          if (document.fullscreenElement) {
+            document.exitFullscreen();
+          }
+      });
+
 </script>
 </body>
 </html>
