@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Branch Terminated / Resign List</title>
+    <title>Employee Exit</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -393,70 +393,184 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Branch Termination / Resign List</h4>
-              <ul class="breadcrumbs mb-3">
-                <li class="nav-home">
-                  <a href="index.html">
-                    <i class="ri-home-3-line"></i>
-                  </a>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Employee Management</span>
-                </li>
-                <li class="separator">
-                  <i class="ri-arrow-right-s-line"></i>
-                </li>
-                <li class="nav-item">
-                  <span class="op-7">Branch Termination / Resign List</span>
-                </li>
-              </ul>
+              <h4 class="fw-bold mb-3">Employee Exit Form</h4>
             </div>
-             <div class="row">
-              <div class="col-md-12">
-                <div class="card">
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                <div class="card card-stats card-round">
                   <div class="card-body">
-                    <div class="table-responsive" id="printableArea">
-                          <div class="d-print-none">
-                            <p class="text-start">
-                                <button type="submit" class="btn btn-primary btn-sm" name="submit1" id="exportExcel" onclick="exportExcel()"><strong><i class="ri-download-2-line"></i> Export</strong></button>
-                                <a href="employee-exit-initiate.html"><button type="submit" class="btn btn-warning btn-sm"><strong>Employee Exit Form</strong></button></a>
-                            </p>
-                          </div>
-                      <table id="basic-datatables" class="display table table-hover table-bordered">
-                        <thead>
-                          <tr>
-                            <th colspan="7" class="text-center bg-light"><strong>Employee Exit List</strong></th>
-                          </tr>
-                          <tr class="text-center">
-                            <th>#</th>
-                            <th>Employee Code</th>
-                            <th>Employee Name</th>
-                            <th>Designation</th>
-                            <th>Date of Joining</th>
-                            <th>Date of Last Working Day</th>
-                            <th>Exit Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td class="text-center">SSPL-12345</td>
-                            <td class="text-center">CHANDRA MOHAN SHARMA</td>
-                            <td class="text-center">TAX COLLECTOR</td>
-                            <td class="text-center">June 02, 2024</td>
-                            <td class="text-center">Dec 30, 2025</td>
-                            <td class="text-center"><span class="badge badge-success">Approved</span></td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    <div class="row">
+                      <h5><strong>Employee Details</strong></h5>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="employeeName">Employee Name</label>
+                          <input type="text" class="form-control" id="employeeName" name="employeeName" placeholder="Enter Employee Name" required>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="employeeCode">Employee Code</label>
+                          <input type="text" class="form-control" id="employeeCode" name="employeeCode" placeholder="Enter Employee Code" required>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="employeeDepartment">Department</label>
+                          <select class="form-select" id="employeeDepartment" name="employeeDepartment" required="">
+                            <option value="">Select Department</option>
+                            <option value="">Rajsthan ULB</option>
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="deputedProject">Deputed Project</label>
+                          <select class="form-select" id="deputedProject" name="deputedProject" placeholder="Enter Project" required="">
+                            <option value="">Select Project</option>
+                            <option value="">NAGAR NIGAM JAIPUR HERITAGE</option>
+                            <option value="">UDAIPUR NAGAR NIGAM</option>
+                            <option value="">NAGAR NIGAM JAIPUR GREATER</option>
+                            <option value="">KOTA NAGAR NIGAM</option>
+                            <option value="">NORTH KOTA NAGAR NIGAM</option>
+                            <option value="">CHURU MUNICIPAL COUNCIL</option>
+                            <option value="">CHOMU MUNICIPAL COUNCIL</option>
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="employeeDesignation">Designation</label>
+                          <input type="text" class="form-control" id="employeeDesignation" name="employeeDesignation" placeholder="Enter Employee Designation" required>   
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="doj">Date of Joining</label>
+                          <input type="Date" class="form-control" id="doj" name="doj" required>   
+                        </div>
+                      </div>   
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="contactNumber1">Contact Number</label>
+                          <input type="text" id="contactNumber1" name="contactNumber1" class="form-control" maxlength="10" placeholder="10 Digits Only" required="">
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="emailId">Email ID</label>
+                          <input type="email" id="emailId" name="emailId" class="form-control" placeholder="Enter Email ID">
+                        </div>
+                      </div>                   
+                    </div>
+                    <div class="row">
+                      <h5 class="mt-2"><strong>Exit Details</strong></h5>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="empExitType">Exit Type</label>
+                          <select class="form-select" id="empExitType" name="empExitType" required="">
+                            <option value="">Select Exit Type</option>
+                            <option value="">Resignation</option>
+                            <option value="">Termination</option>
+                            <option value="">Retirement</option>
+                            <option value="">End of Contract</option>
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="lwd">Date of Last Working Day</label>
+                          <input type="Date" class="form-control" id="lwd" name="lwd" required>   
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="empExitReason">Reason for Exit</label>
+                          <select class="form-select" id="empExitReason" name="empExitReason" required="">
+                            <option value="">Select Exit Reason</option>
+                            <option value="">Performance issues</option>
+                            <option value="">Personal reasons</option>
+                            <option value="">Misconduct</option>
+                            <option value="">Better opportunity</option>
+                            <option value="">Higher Education</option>
+                            <option value="">Relocation</option>
+                            <option value="">Work-Life Balance</option>
+                            <option value="">Health Issues</option>
+                            <option value="">Career Change</option>
+                            <option value="">Others</option>
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="othersRemark">Remark (Optional)</label>
+                          <textarea id="othersRemark" name="othersRemark" class="form-control" rows="3" cols="20" placeholder="Enter Remark"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <h5 class="mt-1"><strong>Notice Details</strong></h5>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="noticeStart">Notice Period Start</label>
+                          <input type="Date" class="form-control" id="noticeStart" name="noticeStart" required>   
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="noticeEnd">Notice Period End</label>
+                          <input type="Date" class="form-control" id="noticeEnd" name="noticeEnd" required>   
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="noticePeriodServed">Notice Period Served</label>
+                          <select class="form-select" id="noticePeriodServed" name="noticePeriodServed" required="">
+                            <option value="">Select</option>
+                            <option value="">Full</option>
+                            <option value="">Partial</option>
+                            <option value="">Not Served</option>
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="uploadNotice">Upload Notice (optional)</label>
+                          <input type="file" class="form-control" id="uploadNotice" name="uploadNotice" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <h5 class="mt-2"><strong>Exit Formalities</strong></h5>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="AssetReturn">Company Asset Return</label>
+                          <textarea id="othersRemark" name="AssetReturn" class="form-control" rows="3" cols="20" placeholder="Ex: Laptop, ID card, Phone"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="EligibleRehire">Eligible for Rehire</label>
+                          <select class="form-select" id="EligibleRehire" name="EligibleRehire" required="">
+                            <option value="">Select</option>
+                            <option value="">YES</option>
+                            <option value="">NO</option>
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="exitDoc">Exit Document Upload (if applicable)</label>
+                          <input type="file" class="form-control" id="exitDoc" name="exitDoc" required>
+                        </div>
+                      </div>
+                      <div class="col-12 py-3 px-3 text-center">
+                          <button type="submit" class="btn btn-success btn-sm" name="submit" id="submit"> Submit</button>
+                      </div>
                     </div>
                   </div>
-
                 </div>
               </div>
+              
             </div>
             
           </div>
@@ -479,64 +593,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js" integrity="sha512-5AcaBUUUU/lxSEeEcruOIghqABnXF8TWqdIDXBZ2SNEtrTGvD408W/ShtKZf0JNjQUfOiRBJP+yHk6Ab2eFw3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="static/js/datatables/datatables.min.js"></script>
 <script src="static/js/admin.js"></script>
-<script>
-  $(document).ready(function () {
-        $("#basic-datatables").DataTable({});
-
-        $("#multi-filter-select").DataTable({
-          pageLength: 10,
-          initComplete: function () {
-            this.api()
-              .columns()
-              .every(function () {
-                var column = this;
-                var select = $(
-                  '<select class="form-select"><option value=""></option></select>'
-                )
-                  .appendTo($(column.footer()).empty())
-                  .on("change", function () {
-                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-                    column
-                      .search(val ? "^" + val + "$" : "", true, false)
-                      .draw();
-                  });
-
-                column
-                  .data()
-                  .unique()
-                  .sort()
-                  .each(function (d, j) {
-                    select.append(
-                      '<option value="' + d + '">' + d + "</option>"
-                    );
-                  });
-              });
-          },
-        });
-
-        // Add Row
-        $("#add-row").DataTable({
-          pageLength: 10,
-        });
-
-        var action =
-          '<td> <div class="form-button-action"> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-        $("#addRowButton").click(function () {
-          $("#add-row")
-            .dataTable()
-            .fnAddData([
-              $("#addName").val(),
-              $("#addPosition").val(),
-              $("#addOffice").val(),
-              action,
-            ]);
-          $("#addRowModal").modal("hide");
-        });
-      });
-</script>
 </body>
 </html>
