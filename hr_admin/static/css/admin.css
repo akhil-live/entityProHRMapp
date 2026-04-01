@@ -1333,7 +1333,7 @@ label {
 .card-stats .card-body h5 strong {
   padding: 4px 10px;
   border-left: 3px solid var(--primary-admin-color);
-  background: #f3faff;
+  background: #f7f3ff;
   box-shadow: 2px 6px 15px 0px rgba(69, 65, 78, 0.1);
 }
 
