@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Payslip</title>
+    <title>Employee Prepare Payslip</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -403,7 +403,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Employee Pay Slip</h4>
+              <h4 class="fw-bold mb-3">Prepare Pay Slip</h4>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="index.html">
@@ -420,7 +420,7 @@
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Employee Pay Slip</span>
+                  <span class="op-7">Prepare Pay Slip</span>
                 </li>
               </ul>
             </div>
@@ -485,7 +485,7 @@
                       <div class="col-sm-12 col-md-12">
                         <div class="card">
                           <div class="card-header">
-                            <h4 class="card-title">Employee Pay Slip</h4>
+                            <h4 class="card-title">Prepare Employee Pay Slip</h4>
                           </div>
                           <div class="card-body card-payslip">
                             <div class="row" style="width:200mm;height:auto;margin:auto; border:#372f6e solid 2px;padding:8px;" id="printableArea">
@@ -593,7 +593,7 @@
                                                           29100.00
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          29100.00
+                                                          <input type="number" id="basicAmount" name="basicAmount" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -604,7 +604,7 @@
                                                           4074.0
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          4074.0
+                                                          <input type="number" id="medicalAllowance" name="medicalAllowance" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -615,7 +615,7 @@
                                                           5820.0
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          5820.0
+                                                          <input type="number" id="bonus" name="bonus" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -626,7 +626,7 @@
                                                           11640.0
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          11640.0
+                                                          <input type="number" id="hra" name="hra" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -637,7 +637,7 @@
                                                           2910.0
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          2910.0
+                                                          <input type="number" id="ca" name="ca" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -648,7 +648,7 @@
                                                           1000.0
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          1000.0
+                                                          <input type="number" id="internet" name="internet" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -659,7 +659,7 @@
                                                           0.0
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          0.0
+                                                          <input type="number" id="washingAllowance" name="washingAllowance" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -670,7 +670,7 @@
                                                           3656.0
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          3656.0
+                                                          <input type="number" id="cca" name="cca" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                     </tbody>
@@ -687,7 +687,7 @@
                                                           <strong>:</strong>
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          0.0
+                                                          <input type="number" id="tds" name="tds" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -698,7 +698,7 @@
                                                           <strong>:</strong>
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          1800.0
+                                                          <input type="number" id="pf" name="pf" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -709,7 +709,7 @@
                                                           <strong>:</strong>
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          0.0
+                                                          <input type="number" id="pt" name="pt" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -720,7 +720,7 @@
                                                           <strong>:</strong>
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          0.0
+                                                          <input type="number" id="esi" name="esi" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                       <tr>
@@ -731,7 +731,7 @@
                                                           <strong>:</strong>
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          0
+                                                         <input type="number" id="loan" name="loan" class="form-control" required>
                                                         </td>
                                                       <tr>
                                                         <td style="border-bottom: 0px;" class="text-center">
@@ -741,7 +741,7 @@
                                                           <strong>:</strong>
                                                         </td>
                                                         <td style="border-bottom: 0px;" class="text-end">
-                                                          0
+                                                          <input type="number" id="advanceSalary" name="advanceSalary" class="form-control" required>
                                                         </td>
                                                       </tr>
                                                     </tbody>
@@ -806,7 +806,7 @@
                                                   <strong>58200	</strong>
                                                 </td>
                                                 <td class="text-end" width="14%" style="background: #eee;">
-                                                  <strong>58200	</strong>
+                                                  <strong>0	</strong>
                                                 </td>
                                                 <td class="text-center" style="background: #eee;">
                                                   <strong>Total Deduction</strong>
@@ -815,7 +815,7 @@
                                                   <strong>:</strong>
                                                 </td>
                                                 <td class="text-end" style="background: #eee;">
-                                                  <strong>1800.0</strong>
+                                                  <strong>0.0</strong>
                                                 </td>
                                                 <td class="text-center" style="background: #eee;">
                                                   <strong>Net Salary</strong>
@@ -824,13 +824,13 @@
                                                   <strong>:</strong>
                                                 </td>
                                                 <td class="text-start" style="background: #eee;">
-                                                  <strong>56400.0</strong>
+                                                  <strong>0.0</strong>
                                                 </td>
                                               </tr>
                                               <tr>
                                                 <td colspan="7">
                                                   <strong style="font-size:12px">
-                                                    Amount In Words : <span>FIFTY-SIX THOUSAND, FOUR HUNDRED  Rupees  Only </span>
+                                                    Amount In Words : <span> </span>
                                                   </strong>
                                                 </td>
                                               </tr>
@@ -847,7 +847,7 @@
                           </div>
                           <div class="d-print-none">
                             <p class="text-center pt-2">
-                              <button type="submit" class="btn btn-info btn-sm" onclick="printTable('printableArea')"><strong>Print</strong></button>
+                              <button type="submit" class="btn btn-secondary btn-sm" name="submit" id="submit"> Update</button>
                             </p>
                           </div>
                         </div>
