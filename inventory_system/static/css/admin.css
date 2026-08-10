@@ -102,10 +102,10 @@ b, .b, strong, .strong {
 }
 
 .ri-asterisk {
-  position: absolute;
   font-size: 8px;
   color: rgb(255, 85, 85);
-  padding: 0px 0px 3px 3px;
+  vertical-align: super;
+  margin-left: 2px;
   font-weight: 600;
 }
 
