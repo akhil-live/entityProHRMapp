@@ -471,29 +471,29 @@
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="itemName">Item Name</label>
+                          <label for="itemName">Item Name <i class="ri-asterisk"></i></label>
                           <input type="text" class="form-control" id="itemName" name="itemName" value="" placeholder="Enter Item Name" required="">
                         </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="itemCode">Item Code</label>
+                          <label for="itemCode">Item Code <i class="ri-asterisk"></i></label>
                           <input type="text" class="form-control" id="itemCode" name="itemCode" value="" placeholder="Enter Item Code" required="">
                         </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="category">Category</label>
+                          <label for="category">Category <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="category" name="category" required="">
                             <option value="">Select</option>
-                            <option value="">Furniture</option>                                   
-                            <option value="">Stationary</option>                                   
+                            <option value="">Furniture</option> 
+                            <option value="">Stationary</option> 
                           </select>    
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="units">Units</label>
+                          <label for="units">Units <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="units" name="units" required="">
                             <option value="">Select</option>
                             <option value="">pcs</option>                                   
@@ -504,15 +504,15 @@
                       </div>
                       <div class="col-lg-3 col-md-3">
                         <div class="form-group">
-                          <label for="itemImage">Upload Item Image</label>
+                          <label for="itemImage">Upload Item Image </label>
                           <input type="file" class="form-control" id="itemImage" name="itemImage">
                           <img src="images/items_images/chair.jpg" style="height:120px; margin:auto; width:120px; border:#CCCCCC solid 1px; margin-top:10px;" id="userPhoto" alt="Item image"> 
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="itemType">Item Type</label>
-                          <select class="form-select" id="itemType" name="itemType" required="">
+                          <label for="itemType">Item Type <i class="ri-asterisk"></i></label>
+                          <select class="form-select" id="itemType" name="itemType" required>
                             <option value="">Select</option>
                             <option value="">Consumable</option>                                   
                             <option value="">Asset</option>                                   
@@ -521,7 +521,13 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="minStock">Minimum Stock Level (For Alert)</label>
+                          <label for="openingStock">Opening Stock (Initial Quantity) <i class="ri-asterisk"></i></label>
+                          <input type="number" class="form-control" id="openingStock" name="openingStock" value="" placeholder="Enter Opening Stock" required>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="minStock">Minimum Stock Level (For Alert) <i class="ri-asterisk"></i></label>
                           <input type="number" class="form-control" id="minStock" name="minStock" value="" placeholder="Enter Minimum Stock Level Alert" required>
                         </div>                 
                       </div>
@@ -544,7 +550,7 @@
         <footer class="footer">
           <div class="container-fluid d-flex justify-content-between">
             <div class="copyright">
-              <a href="#" target="_blank">Sparrow Softech Pvt Ltd</a>
+              <a href="#" target="_blank">Inventory Management System</a>
             </div>
           </div>
         </footer>

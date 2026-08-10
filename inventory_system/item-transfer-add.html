@@ -471,7 +471,7 @@
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="fromOffice">From Office</label>
+                          <label for="fromOffice">From Office <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="fromOffice" name="fromOffice" required>
                             <option value="">Select</option>
                             <option value="">Jaipur</option>                                   
@@ -482,7 +482,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="toOffice">To Office</label>
+                          <label for="toOffice">To Office <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="toOffice" name="toOffice" required>
                             <option value="">Select</option>
                             <option value="">Jaipur</option>                                   
@@ -493,7 +493,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="category">Category</label>
+                          <label for="category">Category <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="category" name="category" required="">
                             <option value="">Select</option>
                             <option value="">Furniture</option>                                   
@@ -503,7 +503,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="item">Item</label>
+                          <label for="item">Item <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="item" name="item" required>
                             <option value="">Select</option>
                             <option value="">Chair (CHA123)</option>                                   
@@ -513,9 +513,29 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="qty">Quantity</label>
+                          <label for="qty">Quantity <i class="ri-asterisk"></i></label>
                           <input type="number" class="form-control" id="qty" name="qty" value="" placeholder="Enter Item Quantity" required>
                         </div>           
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="transferStatus">Transfer Status <i class="ri-asterisk"></i></label>
+                          <select class="form-select" id="transferStatus" name="transferStatus" required>
+                            <option value="">Select</option>
+                            <option value="">Pending</option>                                   
+                            <option value="">Approved</option>                                   
+                            <option value="">In Transit</option>                                   
+                            <option value="">Completed</option>                                   
+                            <option value="">Rejected</option>                                   
+                            <option value="">Cancelled</option>                                   
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="form-group">
+                          <label for="receivedDate">Received Date</label>
+                          <input type="date" class="form-control" id="receivedDate" name="receivedDate" value="">
+                        </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
@@ -542,7 +562,7 @@
         <footer class="footer">
           <div class="container-fluid d-flex justify-content-between">
             <div class="copyright">
-              <a href="#" target="_blank">Sparrow Softech Pvt Ltd</a>
+              <a href="#" target="_blank">Inventory Management System</a>
             </div>
           </div>
         </footer>

@@ -471,13 +471,13 @@
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="purchaseNumber">Purchase Number</label>
+                          <label for="purchaseNumber">Purchase Order No. <i class="ri-asterisk"></i></label>
                           <input type="number" class="form-control" id="purchaseNumber" name="purchaseNumber" value="">
                         </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="supplier">Supplier</label>
+                          <label for="supplier">Supplier <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="supplier" name="supplier" required>
                             <option value="">Select</option>
                             <option value="">Furniture Traders Pvt Ltd</option>                            
@@ -487,7 +487,7 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="office">Office</label>
+                          <label for="office">Office <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="office" name="office" required>
                             <option value="">Select</option>
                             <option value="">Jaipur</option>                                   
@@ -498,13 +498,13 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="purchaseDate">Purchase Date</label>
+                          <label for="purchaseDate">Purchase Date <i class="ri-asterisk"></i></label>
                           <input type="date" class="form-control" id="purchaseDate" name="purchaseDate" value="" required>
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="item">Item</label>
+                          <label for="item">Item <i class="ri-asterisk"></i></label>
                           <select class="form-select" id="item" name="item" required>
                             <option value="">Select</option>
                             <option value="">Chair (CHA123)</option>                                   
@@ -514,14 +514,32 @@
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="qty">Quantity</label>
+                          <label for="qty">Quantity <i class="ri-asterisk"></i></label>
                           <input type="number" class="form-control" id="qty" name="qty" value="" placeholder="Enter Item Quantity" required>
                         </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="pricePerUnit">Price Per Unit</label>
+                          <label for="pricePerUnit">Price Per Unit <i class="ri-asterisk"></i></label>
                           <input type="number" class="form-control" id="pricePerUnit" name="pricePerUnit" value="">
+                        </div>                 
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="purchaseStatus">Puchase Status <i class="ri-asterisk"></i></label>
+                          <select class="form-select" id="purchaseStatus" name="purchaseStatus" required>
+                            <option value="">Select</option>
+                            <option value="">Pending</option>                                   
+                            <option value="">Approved</option>                                   
+                            <option value="">Received</option>                                   
+                            <option value="">Cancelled</option>                                   
+                          </select>    
+                        </div>
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="poDoc">Upload P.O. / Document (Optional)</label>
+                          <input type="file" class="form-control" id="poDoc" name="poDoc">
                         </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
@@ -549,7 +567,7 @@
         <footer class="footer">
           <div class="container-fluid d-flex justify-content-between">
             <div class="copyright">
-              <a href="#" target="_blank">Sparrow Softech Pvt Ltd</a>
+              <a href="#" target="_blank">Inventory Management System</a>
             </div>
           </div>
         </footer>

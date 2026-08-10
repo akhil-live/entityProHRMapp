@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Item Return</title>
+    <title>Purchase Entry View</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -443,7 +443,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Add Returned Item</h4>
+              <h4 class="fw-bold mb-3">Purchase View</h4>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="index.html">
@@ -454,13 +454,21 @@
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Returned Items</span>
+                  <span class="op-7">Purchase Entry</span>
                 </li>
                 <li class="separator">
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Add Returned Item</span>
+                  <a href="purchase-list.html">
+                    <span class="op-7">Purchase List</span>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="ri-arrow-right-s-line"></i>
+                </li>
+                <li class="nav-item">
+                  <span class="op-7">Purchase View</span>
                 </li>
               </ul>
             </div>
@@ -471,62 +479,63 @@
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="fromOffice">From Office <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="fromOffice" name="fromOffice" required>
-                            <option value="">Select</option>
-                            <option value="">Jaipur</option>                                   
-                            <option value="">Kota</option>                                   
-                            <option value="">Udaipur</option>                                   
-                          </select>    
+                          <label for="purchaseNumber">Purchase Order No. <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">A2026</p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="supplier">Supplier <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">Furntiure Traders Pvt Ltd</p> 
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="toOffice">To Office <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="toOffice" name="toOffice" required>
-                            <option value="">Select</option>
-                            <option value="">Jaipur</option>                                   
-                            <option value="">Kota</option>                                   
-                            <option value="">Udaipur</option>                                   
-                          </select>    
+                          <label for="office">Office <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">Jaipur</p>  
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="category">Category <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="category" name="category" required="">
-                            <option value="">Select</option>
-                            <option value="">Furniture</option>                                   
-                            <option value="">Stationary</option>                                   
-                          </select>    
+                          <label for="purchaseDate">Purchase Date <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">25 March 2026</p>
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
                           <label for="item">Item <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="item" name="item" required>
-                            <option value="">Select</option>
-                            <option value="">Chair (CHA123)</option>                                   
-                            <option value="">Table (TAA120)</option>                                   
-                          </select>    
+                          <p class="fw-bold">Chair</p>
                         </div>
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
                           <label for="qty">Quantity <i class="ri-asterisk"></i></label>
-                          <input type="number" class="form-control" id="qty" name="qty" value="" placeholder="Enter Item Quantity" required>
-                        </div>           
+                          <p class="fw-bold">20</p>
+                        </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="reason">Reason <i class="ri-asterisk"></i></label>
-                          <textarea id="reason" name="reason" class="form-control" rows="3" cols="20" placeholder="Enter text here.." required></textarea>
+                          <label for="pricePerUnit">Price Per Unit <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">1000</p>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="purchaseStatus">Puchase Status <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">Approved</p>   
                         </div>
                       </div>
-                      <div class="d-print-none">
-                        <p class="text-center p-3">
-                          <button type="submit" class="btn btn-success btn-sm" name="submit"><strong>Submit</strong></button>
-                        </p>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="poDoc">P.O. / Document (Optional)</label><br>
+                          <button class="btn btn-info btn-xs mb-1">View Document</button>
+                        </div>                 
+                      </div>
+                      <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="remark">Remark (optional)</label>
+                          <p class="fw-bold">black color</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -558,3 +567,4 @@
 <script src="static/js/admin.js"></script>
 </body>
 </html>
+

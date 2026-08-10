@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Item Return</title>
+    <title>Supplier</title>
     <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -443,7 +443,7 @@
         <div class="container">
           <div class="page-inner">
             <div class="page-header d-print-none">
-              <h4 class="fw-bold mb-3">Add Returned Item</h4>
+              <h4 class="fw-bold mb-3">Supplier</h4>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="index.html">
@@ -454,13 +454,21 @@
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Returned Items</span>
+                  <span class="op-7">Vendor</span>
                 </li>
                 <li class="separator">
                   <i class="ri-arrow-right-s-line"></i>
                 </li>
                 <li class="nav-item">
-                  <span class="op-7">Add Returned Item</span>
+                  <a href="supplier-list.html">
+                    <span class="op-7">Supplier List</span>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="ri-arrow-right-s-line"></i>
+                </li>
+                <li class="nav-item">
+                  <span class="op-7">Supplier</span>
                 </li>
               </ul>
             </div>
@@ -471,62 +479,39 @@
                     <div class="row">
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="fromOffice">From Office <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="fromOffice" name="fromOffice" required>
-                            <option value="">Select</option>
-                            <option value="">Jaipur</option>                                   
-                            <option value="">Kota</option>                                   
-                            <option value="">Udaipur</option>                                   
-                          </select>    
-                        </div>
+                          <label for="suppplierName">Supplier Name <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">Stationary Enterprise</p>
+                        </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="toOffice">To Office <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="toOffice" name="toOffice" required>
-                            <option value="">Select</option>
-                            <option value="">Jaipur</option>                                   
-                            <option value="">Kota</option>                                   
-                            <option value="">Udaipur</option>                                   
-                          </select>    
-                        </div>
+                          <label for="gstno">GST No. (if Applicable)</label>
+                          <p class="fw-bold">ABCD12345E</p>
+                        </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="category">Category <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="category" name="category" required="">
-                            <option value="">Select</option>
-                            <option value="">Furniture</option>                                   
-                            <option value="">Stationary</option>                                   
-                          </select>    
-                        </div>
+                          <label for="contact">Contact No. <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">9876543210</p>
+                        </div>                 
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="item">Item <i class="ri-asterisk"></i></label>
-                          <select class="form-select" id="item" name="item" required>
-                            <option value="">Select</option>
-                            <option value="">Chair (CHA123)</option>                                   
-                            <option value="">Table (TAA120)</option>                                   
-                          </select>    
-                        </div>
+                          <label for="address">Address <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">Nehru Nagar</p>
+                        </div>             
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="qty">Quantity <i class="ri-asterisk"></i></label>
-                          <input type="number" class="form-control" id="qty" name="qty" value="" placeholder="Enter Item Quantity" required>
-                        </div>           
+                          <label for="city">City <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">Ajmer</p>
+                        </div>             
                       </div>
                       <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="form-group">
-                          <label for="reason">Reason <i class="ri-asterisk"></i></label>
-                          <textarea id="reason" name="reason" class="form-control" rows="3" cols="20" placeholder="Enter text here.." required></textarea>
-                        </div>
-                      </div>
-                      <div class="d-print-none">
-                        <p class="text-center p-3">
-                          <button type="submit" class="btn btn-success btn-sm" name="submit"><strong>Submit</strong></button>
-                        </p>
+                          <label for="state">State <i class="ri-asterisk"></i></label>
+                          <p class="fw-bold">Rajasthan</p>
+                        </div>             
                       </div>
                     </div>
                   </div>
