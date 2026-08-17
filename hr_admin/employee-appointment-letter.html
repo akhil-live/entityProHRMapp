@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Appointment Letter</title>
+    <link rel="shortcut icon" href="../assets/images/logo/sspl_favicon.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/admin.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+
+    <style>
+      body { font-family: 'Noto sans', sans-serif; }
+      .nav-item.show > a {
+        background-color: #6861CE;
+        color: #fff;
+      }
+      .nav-item > a.active {
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="white">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="inky">
+            <a href="index.html" class="logo">
+              <img src="../assets/images/logo/sspl_logo.png" alt="navbar brand" class="navbar-brand" height="44"/>
+              <h4 style="color: white; padding: 6px 0 0 6px;"><strong>Sparrow Softech</strong></h4>
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item">
+                <a href="index.html">
+                  <i class="ri-home-3-line"></i>
+                  <p>Home</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#employee">
+                  <i class="ri-user-line"></i>
+                  <p>Employee Management</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="employee">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="employee-add.html">
+                        <span class="sub-item">Add New Employee</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-profile.html">
+                        <span class="sub-item">Employee Profile</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-list.html">
+                        <span class="sub-item">Employee List</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-id-card.html">
+                        <span class="sub-item">ID Card</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-appointment-letter.html">
+                        <span class="sub-item">Appointment Letter</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-resign-list.html">
+                        <span class="sub-item">Branch Termination / Resign List</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#leaveMaster">
+                  <i class="ri-calendar-close-line"></i>
+                  <p>Leave</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="leaveMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="employee-apply-leave.html">
+                        <span class="sub-item">Apply Leave</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-leave-pending.html">
+                        <span class="sub-item">Leave Review</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#attendanceMaster">
+                  <i class="ri-calendar-2-line"></i>
+                  <p>Attendance</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="attendanceMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="make-attendance-view.html">
+                        <span class="sub-item">Make Attendance</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="employee-attendance-report.html">
+                        <span class="sub-item">Attendance Report</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#salaryMaster">
+                  <i class="ri-money-rupee-circle-line"></i>
+                  <p>Salary</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="salaryMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="employee-payslip.html">
+                        <span class="sub-item">Employee Payslip</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#holidayMaster">
+                  <i class="ri-calendar-view"></i>
+                  <p>Holiday</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="holidayMaster">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="holiday-list.html">
+                        <span class="sub-item">Holiday List</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="inky">
+              <a href="index.html" class="logo">
+                <img src="../assets/images/logo/sspl_logo.png" alt="navbar brand" class="navbar-brand" height="20"/>
+                <h6 style="color: white; padding: 6px 0 0 8px;"><strong>Sparrow Softech</strong></h6>
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+              <nav
+                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-xl-flex"
+              >
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="btn btn-search pe-1">
+                      <i class="ri-search-line"></i>
+                    </button>
+                  </div>
+                  <input type="text" placeholder="Search ..." class="form-control" />
+                </div>
+              </nav>
+
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none" >
+                  <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false" aria-haspopup="true" >
+                    <i class="ri-search-line"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-search animated fadeIn">
+                    <form class="navbar-left navbar-form nav-search">
+                      <div class="input-group">
+                        <input type="text" placeholder="Search ..." class="form-control" />
+                      </div>
+                    </form>
+                  </ul>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <small class="profile-username">
+                      <span class="op-7"></span>
+                      <small class="text-warning"><i class="ri-shape-line" style="font-size: 20px;"></i></small>
+                      <span class="fw-bold text-warning">Rajasthan</span>
+                    </small>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-warning">
+                    <div class="quick-actions-header">
+                      <span class="title mb-1">Branch</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items">
+                        <div class="row m-0">
+                          <div class="input-group my-2">
+                            <span class="px-2 py-2">Branch: </span>
+                            <select class="form-select form-control-sm" name="branch" id="inputGroupSelect1">
+                              <option value="">Rajasthan</option>
+                              <option value="">Bihar</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <small class="profile-username">
+                      <span class="op-7"></span>
+                      <small class="text-info"><i class="ri-building-4-line" style="font-size: 20px;"></i></small>
+                      <span class="fw-bold text-info">Rajasthan ULB</span>
+                    </small>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-info">
+                    <div class="quick-actions-header">
+                      <span class="title mb-1">Department</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items">
+                        <div class="row m-0">
+                          <div class="input-group my-2">
+                            <span class="px-2 py-2">Department: </span>
+                            <select class="form-select form-control-sm" name="department" id="inputGroupSelect02">
+                              <option value="">Rajasthan ULB</option>
+                              <option value="">Bihar ULB</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <small class="profile-username">
+                      <span class="op-7"></span>
+                      <small class="text-secondary"><i class="ri-government-line" style="font-size: 20px;"></i></small>
+                      <span class="fw-bold text-secondary">Nagar Nigam Jaipur</span>
+                    </small>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn quick-actions-secondary">
+                    <div class="quick-actions-header project-header">
+                      <span class="title mb-1">Project</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items ">
+                        <div class="row m-0">
+                          <div class="input-group my-2">
+                            <span class="px-2 py-2">Project: </span>
+                            <select class="form-select form-control-sm" name="project" id="inputGroupSelect03">
+                              <option value="">Nagar Nigam Jaipur</option>
+                              <option value="">Nagar Nigam Kota</option>
+                              <option value="">Nagar Nigam Udaipur</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                    <i class="ri-gallery-view-2" style="font-size: 20px;"></i>
+                  </a>
+                  <div class="dropdown-menu quick-actions animated fadeIn">
+                    <div class="quick-actions-header">
+                      <span class="title mb-1">Applications</span>
+                    </div>
+                    <div class="quick-actions-scroll scrollbar-outer">
+                      <div class="quick-actions-items">
+                        <div class="row m-0">
+                          <a class="col-6 col-md-4 col-sm-6 col-12 p-0" href="index.html">
+                            <div class="quick-actions-item">
+                              <div class="avatar-item bg-secondary rounded-circle">
+                                <i class="ri-user-settings-line"></i>
+                              </div>
+                              <span class="text">HRMS Admin</span>
+                            </div>
+                          </a>
+                          <a class="col-6 col-md-4 col-sm-6 col-12 p-0" href="#">
+                            <div class="quick-actions-item">
+                              <div class="avatar-item bg-info rounded-circle">
+                                <i class="ri-user-community-line"></i>
+                              </div>
+                              <span class="text">HRMS User</span>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false" >
+                    <div class="avatar-sm">
+                      <img src="images/profile/user.png" alt="profile" class="avatar-img rounded-circle" />
+                    </div>
+                    <span class="profile-username">
+                      <span class="op-7"></span>
+                      <span class="fw-bold">HR Employee Name</span>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li>
+                        <div class="user-box">
+                          <div class="avatar-lg">
+                            <img src="images/profile/user.png" alt="image profile" class="avatar-img rounded" />
+                          </div>
+                          <div class="u-text">
+                            <h4>HR Employee Name</h4>
+                            <p class="text-muted">Employee designation</p>
+                            <p class="text-muted">Employee id</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="my-profile.html">My Profile</a>
+                        <a class="dropdown-item" href="change-password.html">Change Password</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+                <li class="nav-item topbar-icon dropdown hidden-caret">
+                  <a class="nav-link" href="#">
+                    <i class="ri-logout-box-r-line" style="font-size: 20px;"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div class="page-header d-print-none">
+              <h4 class="fw-bold mb-3">Employee Appointment Letter</h4>
+              <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                  <a href="index.html">
+                    <i class="ri-home-3-line"></i>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="ri-arrow-right-s-line"></i>
+                </li>
+                <li class="nav-item">
+                  <span class="op-7">Employee Management</span>
+                </li>
+                <li class="separator">
+                  <i class="ri-arrow-right-s-line"></i>
+                </li>
+                <li class="nav-item">
+                  <span class="op-7">Employee Appointment Letter</span>
+                </li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12">
+                
+                <div class="card card-stats card-round">
+                  <div class="card-header d-print-none">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="form-group">
+                          <label for="empName">Employee</label>
+                          <select class="form-select" id="empName" name="empName" required>
+                            <option value="">Select</option>
+                            <option value="">VIMAL KUMAR SHARMA (SSPL-00221)</option>
+                            <option value="">NIRANJAN KUMAR (SSPL-00222)</option>
+                            <option value="">RITESH KUMAR (SSPL-00001)</option>
+                          </select>                       
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 py-3 ms-2 text-start">
+                      <button type="submit" class="btn btn-primary btn-sm" name="submit" id="orSearch"><i class="fa fa-search"></i> Search</button>
+                    </div>
+                  </div>
+                  
+                  <div class="card-body">
+                    
+                    <div class="row appointment-header" style="width:200mm;height:auto;margin:auto; border:#567EBF solid 2px;padding:8px;" id="printableArea">
+                      <div class="table-responsive demandPrintView" style="width:100%; background:#FFFFFF; padding: 1px;">
+                        <table class="display table table-borderless" width="100%">
+                          <tbody>
+                            <tr style="border-bottom: 3px solid #003B5D;">
+                              <td style="padding: 0px;">
+                                <div style="float:left; width:20px; padding:1px;  text-align:left; ">
+                                  <img src="../assets/images/logo/sspl_logo.png" alt="Logo" width="70">
+                                </div>
+                                <div class="text-center" style=" text-align:center; color:#003B5D; line-height:28px;  padding-top:5px; margin: auto;">
+                                  <span style="font-weight:bold; font-size:26px">XYZ SOFTECH PRIVATE LIMITED</span><br>
+                                  <span style="font-size:14px">123, Lalkothi, Jaipur, Rajasthan - 302001</span><br>
+                                  <span style="font-size:14px">Email: hr@xyzsoftech.com | Phone: +91 98765 43210</span>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="display table table-borderless" width="100%">
+                          <tbody>
+                            <tr>
+                              <td style="padding: 0px; border-bottom: 0px;">
+                                <div class="text-center" style=" text-align:center; color:#003B5D; line-height:28px;  padding-top:5px; margin: auto;">
+                                  <span style="font-weight:bold; font-size:22px; border-bottom: 2px solid #003B5D;">APPOINTMENT LETTER</span>
+                                </div>
+                                
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <table class="display table table-borderless" width="100%" style="margin-bottom: 2px;">
+                          <tbody>
+                            <tr>
+                              <td width="75%" style="border-bottom: 0px;">
+                                <span><strong>Ref. No.: </strong> HR/APP/2026/001</span>
+                              </td>
+                              <td width="25%" style="border-bottom: 0px;">
+                                <span><strong>Date: </strong> 17 August 2026</span>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div style="margin-bottom:10px; line-height: 2;">
+                          <table class="display table table-borderless" width="100%">
+                            <tbody>
+                              <tr>
+                                <td style="border-bottom: 0px;">
+                                  <span class="pb-2">Dear <strong>FULL NAME</strong>,</span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div style="margin-bottom:10px;">
+                          <table class="display table table-borderless" width="100%">
+                            <tbody>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;">We are pleased to offer you an appointment with <strong>XYZ Softech Private Limited</strong> for the position of <strong>Zonal Manager</strong> in the <strong>Collection Department</strong>.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;">Based on your qualifications, skills and experience, we believe that you will be a valuable addition to our organization. Your appointment shall be effective from  <strong>01 September 2026</strong>, subject to the terms and conditions mentioned in this appointment letter. </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>1. Compensation</strong></span><br>
+                                  <span style="line-height: 2;">Your annual Cost to Company (CTC) will be ₹8,50,000, payable monthly.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>2. Probation Period</strong></span><br>
+                                  <span style="line-height: 2;">You shall be on probation for a period of <strong>6 months</strong> from the date of joining. Your employment shall be confirmed upon successful completion of the probation period and satisfactory performance.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>3. Work Location: </strong></span><br>
+                                  <span style="line-height: 2;">You will report to our Jaipur office.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>4. Working Hours</strong></span><br>
+                                  <span style="line-height: 2;">Your normal working hours will be as prescribed by the company from time to time. You may be required to work additional hours depending upon business requirements.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>5. Leave and Holidays</strong></span><br>
+                                  <span style="line-height: 2;">You will be entitled to leave as per the Company's prevailing leave policy. Applicable public holidays will be communicated at the start of each calendar year.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>6. Terms & Conditions</strong></span><br>
+                                  <span style="line-height: 2;">
+                                    <ol type="a">
+                                      <li>You shall perform your duties diligently and comply with all company policies, rules, and procedures.</li>
+                                      <li>You shall maintain confidentiality of all confidential business, technical, financial, and customer information.</li>
+                                      <li>You shall not disclose or misuse confidential information during or after your employment.</li>
+                                      <li>Your employment is subject to submission and verification of all required educational, professional, identity, and other documents.</li>
+                                      <li>The company reserves the right to modify its policies, procedures, and terms of employment from time to time.</li>
+                                      <li>Your employment may be terminated in accordance with the company's applicable policies and terms of employment.</li>
+                                      <li>You shall comply with all applicable laws and regulations while performing your duties.</li>
+                                    </ol>
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>7. Documents Required</strong></span><br>
+                                  <span style="line-height: 2;">You are required to submit copies of the necessary documents, including identity proof, address proof, educational certificates, previous employment documents, photographs, and bank details, as applicable.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;"><strong>8. Acceptance of Appointment</strong></span><br>
+                                  <span style="line-height: 2;">Please sign and return a copy of this appointment letter as a token of your acceptance of the terms and conditions mentioned herein.</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border-bottom: 0px; text-align: justify;">
+                                  <span style="line-height: 2;">We welcome you to <strong>XYZ Softech Private Limited</strong> and look forward to a mutually rewarding and successful association.</span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <table class="display table table-borderless" width="100%">
+                            <tbody>
+                              <tr>
+                                <td colspan="4" style="border-bottom: 0px;">
+                                  <table class="display table table-borderless" width="100%" style="margin-bottom: 2rem; border-bottom: 0px;">
+                                    <tbody>
+                                      <tr>
+                                        <td width="40%" style="border-bottom: 0px; padding-left: 0px !important; line-height: 8;" class="text-start">
+                                          <strong>For XYZ Softech Private Limited</strong>
+                                        </td>
+                                        <td width="40%" style="border-bottom: 0px; float: right; margin-top: 10px; line-height: 8;">
+                                          <span><strong>Accepted & Agreed By</strong></span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="40%" style="border-bottom: 0px; padding-left: 0px !important;" class="text-start">
+                                          <span style="width: 180px; border-top: 1px solid #333; padding-top: 4px;"> Authorized Signatory</span>
+                                        </td>
+                                        <td width="40%" style="border-bottom: 0px; float: right; margin-top: 10px;">
+                                          <span style="width: 180px; border-top: 1px solid #333; padding-top: 4px;"> Employee Signature</span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="40%" style="border-bottom: 0px; padding-left: 0px !important;" class="text-start">
+                                          <span style="width: 180px; padding-top: 4px;"> <strong>Name: </strong> HR Manager</span>
+                                        </td>
+                                        <td width="40%" style="border-bottom: 0px; float: right; margin-top: 10px;">
+                                          <span style="width: 180px; padding-top: 4px;"> <strong>Name:</strong> Employee Name</span>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="40%" style="border-bottom: 0px; padding-left: 0px !important;" class="text-start">
+                                          <span style="width: 180px; padding-top: 4px;"> <strong>Date: </strong></span>
+                                        </td>
+                                        <td width="40%" style="border-bottom: 0px; float: right; margin-top: 10px;">
+                                          <span style="width: 180px; padding-top: 4px;"> <strong>Date: </strong></span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                    </div>
+                  </div>
+                    <div class="d-print-none">
+                        <p class="text-center pt-2">
+                            <button type="submit" class="btn btn-info btn-sm mb-1" onclick="printTable('printableArea')"><strong><i class="ri-printer-line"></i> Print</strong></button>
+                            <button type="#" class="btn btn-secondary btn-sm mb-1"><strong><i class="ri-download-line"></i> Download</strong></button>
+                        </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer start -->
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <div class="copyright">
+              <a href="#" target="_blank">XYZ Softech Private Limited</a>
+            </div>
+          </div>
+        </footer>
+        <!-- footer end -->
+      </div>
+    </div>
+
+    
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.scrollbar/0.2.11/jquery.scrollbar.min.js" integrity="sha512-5AcaBUUUU/lxSEeEcruOIghqABnXF8TWqdIDXBZ2SNEtrTGvD408W/ShtKZf0JNjQUfOiRBJP+yHk6Ab2eFw3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="static/js/admin.js"></script>
+<script>
+  function printTable(areaID) 
+    {
+        var printContent = document.getElementById(areaID).innerHTML;
+        var originalContent = document.body.innerHTML;
+        document.body.innerHTML = printContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+</script>
+</body>
+</html>
